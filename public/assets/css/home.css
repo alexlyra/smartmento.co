@@ -1,0 +1,184 @@
+.tdh-1 {
+    position: absolute;
+    width: 737px;
+    height: 51px;
+    left: calc(50% - calc(737px / 2));
+    top: 10%;
+    font-style: normal;
+    font-weight: 700;
+    line-height: calc(1.5em + 4px);
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 2rem;
+}
+
+.tdh-2 {
+    position: absolute;
+    width: 50%;
+    height: 74px;
+    left: calc(50% - calc(50% / 2));
+    top: 25%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 23px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.tdh-3 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 470px;
+    height: 80px;
+    left: calc(50% - calc(470px / 2));
+    top: 60%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 41px;
+    text-align: center;
+    color: var(--smartmentor-dark-blue);
+    background-color: #FFFFFF;
+    box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.tdh-3:hover {
+    background-color: var(--smartmentor-dark-blue);
+    color: #FFFFFF;
+    border: 3px solid #E7455F;
+}
+
+section#guru {
+    text-align: center;
+}
+
+section#guru>.container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+section#register {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--smartmentor-light-blue);
+    height: 248px;
+}
+
+section#register .container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section#register button {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5em;
+    line-height: normal;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 172px;
+    width: 290px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 30px;
+}
+
+section#register button:hover {
+    background-color: var(--smartmentor-dark-blue);
+    color: #FFFFFF;
+    border: 3px solid #E7455F;
+}
+
+section#guru2>.container {
+    height: 100%;
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+section#guru2>.container .card {
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+section#funcionamento {
+    max-width: 100vw;
+    background-color: var(--smartmentor-gray);
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+}
+
+section#funcionamento div.passos {
+    position: relative;
+    max-width: 100vw;
+    overflow-x: auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+section#funcionamento button {
+    background-color: var(--smartmentor-dark-pink);
+    border: none;
+    border-radius: 30px;
+    width: 622px;
+    height: 84px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+    .tdh-1 {
+        font-size: 1.25em;
+    }
+
+    .tdh-2 {
+        font-size: 1em;
+        width: 90%;
+        left: calc(50% - calc(90% / 2));
+        top: 25%;
+        text-align: center;
+    }
+
+    .tdh-3 {
+        width: 80%;
+        left: calc(50% - calc(80% / 2));
+        font-size: 1.5em;
+    }
+
+    section#register .container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    section#register button {
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 290px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    section#funcionamento button {
+        width: 90%;
+    }
+}

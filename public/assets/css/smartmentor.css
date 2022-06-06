@@ -1,0 +1,46 @@
+:root {
+    --smartmentor-dark-blue: #112958;
+    --smartmentor-light-blue: #0378a6;
+    --smartmentor-dark-pink: #E7455F;
+    --smartmentor-gray: #C4C4C4;
+}
+
+.smartmentor-dark-blue {
+    color: var(--smartmentor-dark-blue) !important;
+}
+.bg-smartmentor-dark-blue {
+    background-color: var(--smartmentor-dark-blue) !important;
+}
+.border-smartmentr-dark-blue {
+    border-color: var(--smartmentor-dark-blue) !important;
+}
+
+.smartmentor-light-blue {
+    color: var(--smartmentor-light-blue) !important;
+}
+.bg-smartmentor-light-blue {
+    background-color: var(--smartmentor-light-blue) !important;
+}
+.border-smartmentr-light-blue {
+    border-color: var(--smartmentor-light-blue) !important;
+}
+
+.smartmentor-dark-pink {
+    color: var(--smartmentor-dark-pink) !important;
+}
+.bg-smartmentor-dark-pink {
+    background-color: var(--smartmentor-dark-pink) !important;
+}
+.border-smartmentr-dark-pink {
+    border-color: var(--smartmentor-dark-pink) !important;
+}
+
+.smartmentor-gray {
+    color: var(--smartmentor-gray) !important;
+}
+.bg-smartmentor-gray {
+    background-color: var(--smartmentor-gray) !important;
+}
+.border-smartmentr-gray {
+    border-color: var(--smartmentor-gray) !important;
+}
