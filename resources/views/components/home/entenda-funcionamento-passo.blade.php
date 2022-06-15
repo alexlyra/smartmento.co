@@ -8,8 +8,8 @@
             margin-left: 40px;
             margin-right: 40px;
             position: relative;
-            width: calc(412px + 169px);
-            height: calc(281px + 169px);
+            width: calc(412px + 80px);
+            height: calc(271px + 80px);
             display: flex;
             justify-content: center;
             align-items: end
@@ -19,7 +19,7 @@
             background: #FFFFFF;
             border-radius: 31px;
             width: 412px;
-            height: 281px;
+            height: 271px;
             color: #000000;
             display: flex;
             justify-content: center;
@@ -29,18 +29,18 @@
 
         div[id="{{$id}}"][data-element="card"] div[data-element="passo"] {
             position: absolute;
-            width: 169px;
-            height: 169px;
+            width: 80px;
+            height: 80px;
             background: #112959;
-            border: 7px solid #FFFFFF;
+            border: 4px solid var(--smartmentor-gray);
             color: #FFFFFF;
             box-sizing: border-box;
             border-radius: 10rem;
             font-style: normal;
             font-weight: 700;
-            font-size: 64px;
+            font-size: 40px;
             top: 40px;
-            left: calc(50% - calc(169px / 2));
+            left: calc(50% - calc(80px / 2));
             display: flex;
             justify-content: center;
             align-items: center;

@@ -22,13 +22,11 @@
             <p>
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             </p>
-        </div>
-    </section>
 
-    <section id="register">
-        <div class="container">
-            <button>Já sou mentor</button>
-            <button>Quero ser mentor</button>
+            <div class="container-btn">
+                <button>Já sou mentor</button>
+                <button>Quero ser mentor</button>
+            </div>
         </div>
     </section>
 
@@ -36,7 +34,7 @@
         <div class="container">
             <div class="card rounded-9">
                 <div class="card-body text-center">
-                    <div class="row justify-content-center align-content-center" style="margin-top: 3em;margin-bottom:3em">
+                    <div class="row justify-content-center align-content-center mx-0 px-0" style="margin-top: 3em;margin-bottom:3em">
                         <div class="col-md-4 d-flex justify-content-center align-content-center my-3">
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sollicitudin lorem eget pulvinar tempor. Vivamus id tempor nulla. Vestibulum dui est, egestas non convallis sed, malesuada non orci. Lorem ipsum dolor sit amet, consectetur . <a href="" class="smartmentor-dark-pink font-weight-bold">Saiba mais.</a>
