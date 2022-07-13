@@ -8,37 +8,49 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable implements MustVerifyEmail {
     use HasApiTokens, HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
+        'mobile',
+        'birthday',
+        'photo',
         'password',
+        'active',
+        'social_login', /* ['google', 'facebook', 'instagram', 'linkedin', 'twitter'] */
+        'social_id',
+        'social_name',
+        'social_token',
+        'first_access',
+        'status', /* ['pending', 'approved', 'unapproved', 'authorized', 'unauthorized', 'analyzing', 'reviewing', 'reported', 'cancelled', 'robot', 'deleted'] */
+        'deleted_at',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
     protected $hidden = [
         'password',
         'remember_token',
+        'social_id',
+        'social_name',
+        'social_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'active' => 'boolean',
     ];
+
+    public function setFirstNameAttribute (string $value): void {
+        $this->attributes['first_name'] = ucfirst($value);
+    }
+
+    public function setLastNameAttribute (string $value): void {
+        $this->attributes['last_name'] = ucfirst($value);
+    }
+
+    public function getFullNameAttribute (): string {
+        return "{$this->first_name} {$this->last_name}";
+    }
 }

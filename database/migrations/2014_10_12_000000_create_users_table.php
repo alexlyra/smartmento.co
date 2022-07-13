@@ -15,12 +15,24 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('first_name')->nullable(false);
+            $table->string('last_name')->nullable(false);
             $table->string('email')->unique();
+            $table->string('mobile')->nullable(true);
+            $table->string('birthday')->nullable(true);
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('photo')->nullable(true);
             $table->string('password');
             $table->rememberToken();
+            $table->boolean('active')->default(1);
+            $table->set('social_login', ['google', 'facebook', 'instagram', 'linkedin', 'twitter'])->nullable(true);
+            $table->string('social_id')->nullable(true);
+            $table->string('social_name')->nullable(true);
+            $table->string('social_token', 510)->nullable(true);
+            $table->boolean('first_access')->default(1);
+            $table->set('status', ['pending', 'approved', 'unapproved', 'authorized', 'unauthorized', 'analyzing', 'reviewing', 'reported', 'cancelled', 'robot', 'deleted']);
             $table->timestamps();
+            $table->timestamp('deleted_at')->nullable(true);
         });
     }
 
