@@ -24,7 +24,7 @@
             </div>
         </div>
     </div>
-    <h6 class="copyright">
+    <h6 class="copyright mb-0">
         Smartmentor {{ date('Y') }}
         <i class="fa-regular fa-copyright mx-2 text-white"></i>
         Todos os direitos reservados

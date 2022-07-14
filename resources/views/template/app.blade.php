@@ -15,19 +15,18 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ Config::get('app.name') }}</title>
         @stack('header')
-        <link rel="stylesheet" href="{{asset('mdb/css/mdb.min.css')}}">
-        <link rel="stylesheet" href="{{asset('fontawesome/css/all.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/app.css?v=0.0.1.0')}}">
+        <link rel="stylesheet" href="{{ asset('mdb/css/mdb.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('fontawesome/css/all.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         @stack('styles')
     </head>
     <body>
         <x-menu />
         @stack('body')
         @yield('content')
-
+        <x-footer />
         @yield('modals')
-        <script src="{{asset('mdb/js/mdb-pt_BR.js')}}"></script>
-        <script src="{{asset('assets/app.js?v=0.0.1.0')}}"></script>
+        <script src="{{ mix('js/app.js') }}"></script>
         @stack('scripts')
     </body>
 </html>

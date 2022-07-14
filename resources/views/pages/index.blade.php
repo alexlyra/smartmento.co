@@ -68,6 +68,4 @@
 
         <button>Experimente agora</button>
     </section>
-
-    <x-footer />
 @endsection
