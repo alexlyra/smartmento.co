@@ -17,7 +17,7 @@
         @stack('header')
         <link rel="stylesheet" href="{{ asset('mdb/css/mdb.min.css') }}">
         <link rel="stylesheet" href="{{ asset('fontawesome/css/all.css') }}">
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         @stack('styles')
     </head>
     <body>
@@ -26,7 +26,7 @@
         @yield('content')
         <x-footer />
         @yield('modals')
-        <script src="{{ mix('js/app.js') }}"></script>
+            <script src="{{ asset('js/app.js') }}"></script>
         @stack('scripts')
     </body>
 </html>
