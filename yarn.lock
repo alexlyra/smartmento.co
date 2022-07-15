@@ -3371,6 +3371,10 @@ md5@^2.3.0:
     crypt "0.0.2"
     is-buffer "~1.1.6"
 
+"mdb-ui-kit@git+https://oauth2:_DheCfvzTjhf5zj_xhBc@git.mdbootstrap.com/mdb/standard/mdb-ui-kit-pro-advanced":
+  version "4.3.0"
+  resolved "git+https://oauth2:_DheCfvzTjhf5zj_xhBc@git.mdbootstrap.com/mdb/standard/mdb-ui-kit-pro-advanced#4b3c534b6fab2dd9ed5e38d093962b3e6960b52b"
+
 mdn-data@2.0.14:
   version "2.0.14"
   resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.0.14.tgz#7113fc4281917d63ce29b43446f701e68c25ba50"
@@ -4725,6 +4729,11 @@ svgo@^2.7.0:
     csso "^4.2.0"
     picocolors "^1.0.0"
     stable "^0.1.8"
+
+sweetalert2@^11.4.22:
+  version "11.4.22"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.4.22.tgz#255618eb7c5a4add513605dd01a3b31a257b9df8"
+  integrity sha512-gDBdi/RrU8/+1IPITQyqx4E5vvXt/VdFfaXa0EevJ2teyY/+yJhUb/EQ/yi07It0XZdl3LebeffWGETXWq5fow==
 
 tapable@^2.1.1, tapable@^2.2.0:
   version "2.2.1"

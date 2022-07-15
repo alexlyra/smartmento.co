@@ -1,0 +1,98 @@
+div.user-badge {
+    width: 75% !important;
+    background-color: white !important;
+    text-align: center !important;
+    border-radius: 1rem !important;
+    padding: 1rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+div.user-badge div.badge-holder {
+    height: 20px;
+    background-color: var(--smartmentor-gray);
+    border-radius: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    width: 50% !important;
+}
+
+div.user-badge div#displayPhoto i {
+    font-size: 6em;
+}
+
+div.user-badge div.user-informations {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+    width: 100% !important;
+}
+
+div.user-badge div.user-informations div#displayFullName, 
+div.user-badge div.user-informations div#displayEmailContainer, 
+div.user-badge div.user-informations div#displaySegmentsContainer, 
+div.user-badge div.user-informations div#displayInterestsContainer {
+    border-bottom: 3px solid var(--smartmentor-light-blue) !important;
+    width: 100% !important;
+    text-align: center;
+}
+
+div.user-badge div.user-informations div#displayEmailContainer {
+    height: 3em !important;
+}
+
+div.user-badge div.user-informations div#displaySegmentsContainer, 
+div.user-badge div.user-informations div#displayInterestsContainer {
+    height: 5em !important;
+}
+
+div.tab-number {
+    background-color: white;
+    width: 2.5em !important;
+    height: 2.5em !important;
+    min-height: 2.5em !important;
+    min-width: 2.5em !important;
+    max-width: 2.5em !important;
+    max-height: 2.5em !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    border-radius: 10rem;
+}
+
+@media (max-width: 768px) {
+    div.tab-number {
+        width: 2em !important;
+        height: 2em !important;
+        min-height: 2em !important;
+        min-width: 2em !important;
+        max-width: 2em !important;
+        max-height: 2em !important;
+    }
+}
+
+div.smartmentor-control input,
+div.smartmentor-control input:focus,
+div.smartmentor-control input:hover,
+div.smartmentor-control input:active, 
+div.smartmentor-control input:-webkit-autofill,
+div.smartmentor-control input:-webkit-autofill:hover, 
+div.smartmentor-control input:-webkit-autofill:focus {
+    border: none !important;
+    background: transparent !important;
+    border-bottom: 1px solid white !important;
+    -webkit-text-fill-color: var(--smartmentor-dark-blue);
+    -webkit-border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    transition: background-color 5000s ease-in-out 0s;
+    outline: none;
+    text-align: left;
+}
+div.smartmentor-control label[for] {
+    display: block;
+    font-weight: 900;
+    color: var(--smartmentor-dark-blue);
+}

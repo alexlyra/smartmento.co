@@ -12,7 +12,7 @@
             </div>
 
             <div class="collapse navbar-collapse mx-md-3" id="navbarSmartMentor">
-                <a href="" class="">
+                <a href="{{ route('index') }}" class="">
                     <img src="{{ asset('storage/images/logo.png') }}" class="logo" alt="SmartMentor" data-view="big">
                 </a>
                 <ul class="navbar-nav ms-auto">

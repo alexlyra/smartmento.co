@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::controller(App\Http\Controllers\LandPageController::class)->group(function () {
     Route::get('/', 'index')->name('index');
 });
+
+
+Route::prefix('/cadastrar')->name('register.')->controller(App\Http\Controllers\Auth\RegisterController::class)->group(function () {
+    Route::get('/mentor', 'mentor')->name('mentor');
+    Route::post('/mentor', 'mentorRegister')->name('mentor.register');
+
+    Route::get('/mentee', 'mentee')->name('mentee');
+    Route::post('/mentee', 'menteeRegister')->name('mentee.register');
+});

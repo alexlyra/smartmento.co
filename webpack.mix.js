@@ -19,4 +19,7 @@ mix.ts([
 .postCss('public/mdb/css/mdb.min.css', 'public/css', [])
 .postCss('resources/css/app.css', 'public/css', [])
 .postCss('public/assets/css/app.css', 'public/css', [])
-.sourceMaps(true, 'source-map');
+.sourceMaps(false, 'source-map');
+
+mix.ts(['public/pages/auth/mentor.ts'], 'public/js/auth/mentor.js')
+.ts(['public/pages/home.ts'], 'public/js/home.js');

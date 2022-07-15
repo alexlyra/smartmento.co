@@ -1,5 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/auth/mentor.js": "/js/auth/mentor.js",
+    "/js/home.js": "/js/home.js",
     "/css/app.css": "/css/app.css",
     "/css/mdb.min.css": "/css/mdb.min.css"
 }

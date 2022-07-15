@@ -44,3 +44,30 @@
 .border-smartmentr-gray {
     border-color: var(--smartmentor-gray) !important;
 }
+
+.smartmentor-btn {
+    vertical-align: middle;
+    border: 0;
+    border-radius: 17px !important;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 20%), 0 2px 10px 0 rgb(0 0 0 / 10%);
+    font-weight: 500;
+    display: inline-block;
+    text-align: center;
+    user-select: none;
+    text-decoration: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    padding: 0.75rem 1.6875rem 0.6875rem;
+    font-size: .875rem;
+    line-height: 1.6;
+}
+
+.smartmentor-btn-dark-pink {
+    background-color: var(--smartmentor-dark-pink) !important;
+    color: #FFFFFF;
+}
+
+.smartmentor-btn-dark-pink:hover {
+    background-color: var(--smartmentor-dark-blue) !important;
+    color: #FFFFFF;
+    border: 2px solid var(--smartmentor-dark-pink) !important;
+}

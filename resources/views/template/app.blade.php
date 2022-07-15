@@ -26,7 +26,7 @@
         @yield('content')
         <x-footer />
         @yield('modals')
-            <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
         @stack('scripts')
     </body>
 </html>

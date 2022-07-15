@@ -24,8 +24,8 @@
             </p>
 
             <div class="container-btn">
-                <button>Já sou mentor</button>
-                <button>Quero ser mentor</button>
+                <button class="mentorBtn" data-action="login">Já sou mentor</button>
+                <button class="mentorBtn" data-action="register">Quero ser mentor</button>
             </div>
         </div>
     </section>
@@ -69,3 +69,7 @@
         <button>Experimente agora</button>
     </section>
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('js/home.js') }}"></script>
+@endpush
