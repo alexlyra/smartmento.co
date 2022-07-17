@@ -16,4 +16,5 @@ export interface InputmaskInterface {
 
 export interface HTMLElementWithValue extends HTMLElement {
     value?: any,
+    files?: FileList,
 }

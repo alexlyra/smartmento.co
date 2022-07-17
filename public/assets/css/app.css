@@ -179,3 +179,7 @@ footer .menu div.category a i {
         right: 1rem;
     }
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}

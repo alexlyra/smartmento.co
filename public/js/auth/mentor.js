@@ -163,46 +163,82 @@ var tabs = {
   price: document.getElementById('tabs-price')
 };
 var nextAction = document.getElementById('nextAction');
-nextAction === null || nextAction === void 0 ? void 0 : nextAction.addEventListener('click', function (event) {
-  var _a;
+var previousAction = document.getElementById('previousAction');
+var birthdayInput = document.getElementById('birthday');
+var firstName = document.getElementById('first_name');
+var lastName = document.getElementById('last_name');
+var email = document.getElementById('email');
+var whatsappInput = document.getElementById('whatsapp');
+var photo = document.getElementById('photo');
 
-  var next = (_a = nextAction.dataset) === null || _a === void 0 ? void 0 : _a.next;
+var showTab = function showTab(elem, called, next, prev) {
+  nextAction === null || nextAction === void 0 ? void 0 : nextAction.setAttribute('data-next', "".concat(next));
+  previousAction === null || previousAction === void 0 ? void 0 : previousAction.setAttribute('data-previous', "".concat(prev));
 
-  if (next && ['segments', 'interests', 'challenge', 'price', 'finish'].includes(next)) {
-    switch (next) {
+  if (!prev) {
+    previousAction === null || previousAction === void 0 ? void 0 : previousAction.classList.add('d-none');
+  } else {
+    previousAction === null || previousAction === void 0 ? void 0 : previousAction.classList.remove('d-none');
+  }
+
+  if (called === 'price' && nextAction) {
+    nextAction.innerHTML = 'Finalizar';
+  } else if (nextAction) {
+    nextAction.innerHTML = 'Próxima página';
+  }
+
+  new mdb_ui_kit__WEBPACK_IMPORTED_MODULE_1__.Tab(elem).show();
+};
+
+var whichTab = function whichTab(tab) {
+  if (tab && ['personalData', 'segments', 'interests', 'challenge', 'price', 'finish'].includes("".concat(tab))) {
+    switch (tab) {
+      case 'personalData':
+        showTab(tabs.personalData, 'personalData', 'segments', '');
+        break;
+
       case 'segments':
-        new mdb_ui_kit__WEBPACK_IMPORTED_MODULE_1__.Tab(tabs.segments).show();
-        nextAction.setAttribute('data-next', 'interests');
+        showTab(tabs.segments, 'segments', 'interests', 'personalData');
         break;
 
       case 'interests':
-        new mdb_ui_kit__WEBPACK_IMPORTED_MODULE_1__.Tab(tabs.interests).show();
-        nextAction.setAttribute('data-next', 'challenge');
+        showTab(tabs.interests, 'interests', 'challenge', 'segments');
         break;
 
       case 'challenge':
-        new mdb_ui_kit__WEBPACK_IMPORTED_MODULE_1__.Tab(tabs.challenge).show();
-        nextAction.setAttribute('data-next', 'price');
+        showTab(tabs.challenge, 'challenge', 'price', 'interests');
         break;
 
       case 'price':
-        new mdb_ui_kit__WEBPACK_IMPORTED_MODULE_1__.Tab(tabs.price).show();
-        nextAction.setAttribute('data-next', 'finish');
+        showTab(tabs.price, 'price', 'finish', 'challenge');
         break;
+
+      case 'finish':
+        break;
+
+      default:
+        showTab(tabs.personalData, 'personalData', 'segments', '');
     }
   }
+};
+
+whichTab('personalData');
+nextAction === null || nextAction === void 0 ? void 0 : nextAction.addEventListener('click', function (event) {
+  var _a;
+
+  whichTab("".concat(((_a = nextAction.dataset) === null || _a === void 0 ? void 0 : _a.next) ? nextAction.dataset.next : ''));
 });
-var birthdayInput = document.getElementById('birthday');
+previousAction === null || previousAction === void 0 ? void 0 : previousAction.addEventListener('click', function (event) {
+  var _a;
+
+  whichTab("".concat(((_a = previousAction.dataset) === null || _a === void 0 ? void 0 : _a.previous) ? previousAction.dataset.previous : ''));
+});
 var birthday = new mdb_ui_kit_plugins_js_inputmask_min_js__WEBPACK_IMPORTED_MODULE_0__(birthdayInput, {
   inputMask: '99/99/9999',
   charPlaceholder: "-",
   maskPlaceholder: true,
   inputPlaceholder: false
 });
-var firstName = document.getElementById('first_name');
-var lastName = document.getElementById('last_name');
-var email = document.getElementById('email');
-var whatsappInput = document.getElementById('whatsapp');
 var whatsapp = new mdb_ui_kit_plugins_js_inputmask_min_js__WEBPACK_IMPORTED_MODULE_0__(whatsappInput, {
   inputMask: '(99) 99999-9999',
   charPlaceholder: '-',
@@ -210,13 +246,28 @@ var whatsapp = new mdb_ui_kit_plugins_js_inputmask_min_js__WEBPACK_IMPORTED_MODU
   inputPlaceholder: false
 });
 firstName === null || firstName === void 0 ? void 0 : firstName.addEventListener('input', function (event) {
-  badge.fullName.children[0].innerHTML = firstName.value;
+  badge.fullName.children[0].innerHTML = firstName.value ? firstName.value : 'Nome';
 });
 lastName === null || lastName === void 0 ? void 0 : lastName.addEventListener('input', function (event) {
-  badge.fullName.children[1].innerHTML = lastName.value;
+  badge.fullName.children[1].innerHTML = lastName.value ? lastName.value : 'Sobrenome';
 });
 email === null || email === void 0 ? void 0 : email.addEventListener('input', function (event) {
   badge.email.children[1].innerHTML = email.value;
+});
+photo === null || photo === void 0 ? void 0 : photo.addEventListener('change', function (event) {
+  if (photo.files && photo.files.length > 0) {
+    var file = photo.files[0];
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      var base64 = "".concat(e.target.result);
+      badge.photo.innerHTML = "<img src=\"".concat(base64, "\" style=\"width:6em;height:6em;\" />");
+    };
+
+    reader.readAsDataURL(file);
+  } else {
+    badge.photo.innerHTML = "<i class=\"fa-light fa-circle-user smartmentor-light-blue\"></i>";
+  }
 });
 })();
 

@@ -2,8 +2,10 @@
 
 namespace App\Models\System;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Interests extends Model {
     use HasFactory;
@@ -22,4 +24,10 @@ class Interests extends Model {
     protected $casts = [
         'active' => 'boolean',
     ];
+
+    public static function booted () {
+        static::addGlobalScope('NotDeleted', function (Builder $builder) {
+            $builder->whereNull('interests.deleted_at');
+        });
+    }
 }

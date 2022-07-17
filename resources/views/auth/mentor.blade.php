@@ -37,25 +37,30 @@
                             @include('auth.components.mentor.personal-data')
                         </div>
                         <div class="tab-pane fade" id="tab-segments" role="tabpanel">
-                            Tab 2 content
+                            @include('auth.components.mentor.segments')
                         </div>
                         <div class="tab-pane fade" id="tab-interests" role="tabpanel">
-                            Tab 3 content
+                            @include('auth.components.mentor.interests')
                         </div>
                         <div class="tab-pane fade" id="tab-challenge" role="tabpanel">
-                            Tab 4 content
+                            @include('auth.components.mentor.challenge')
                         </div>
                         <div class="tab-pane fade" id="tab-price" role="tabpanel">
-                            Tab 5 content
+                            @include('auth.components.mentor.price')
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 d-flex flex-md-column flex-column-reverse align-items-center">
                     @include('auth.components.mentor.badge')
 
-                    <button class="smartmentor-btn smartmentor-btn-dark-pink mt-md-3 mb-md-0 mb-3 ripple-surface" id="nextAction" data-next="segments">
-                        Próxima página
-                    </button>
+                    <div>
+                        <button class="smartmentor-btn smartmentor-btn-dark-pink mt-md-3 mb-md-0 mb-3 ripple-surface" id="previousAction" data-previous="personalData">
+                            Página anterior
+                        </button>
+                        <button class="smartmentor-btn smartmentor-btn-dark-pink mt-md-3 mb-md-0 mb-3 ripple-surface" id="nextAction" data-next="segments">
+                            Próxima página
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

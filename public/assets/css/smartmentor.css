@@ -11,7 +11,7 @@
 .bg-smartmentor-dark-blue {
     background-color: var(--smartmentor-dark-blue) !important;
 }
-.border-smartmentr-dark-blue {
+.border-smartmentor-dark-blue {
     border-color: var(--smartmentor-dark-blue) !important;
 }
 
@@ -21,7 +21,7 @@
 .bg-smartmentor-light-blue {
     background-color: var(--smartmentor-light-blue) !important;
 }
-.border-smartmentr-light-blue {
+.border-smartmentor-light-blue {
     border-color: var(--smartmentor-light-blue) !important;
 }
 
@@ -31,7 +31,7 @@
 .bg-smartmentor-dark-pink {
     background-color: var(--smartmentor-dark-pink) !important;
 }
-.border-smartmentr-dark-pink {
+.border-smartmentor-dark-pink {
     border-color: var(--smartmentor-dark-pink) !important;
 }
 
@@ -63,11 +63,11 @@
 
 .smartmentor-btn-dark-pink {
     background-color: var(--smartmentor-dark-pink) !important;
+    border: 2px solid var(--smartmentor-dark-pink) !important;
     color: #FFFFFF;
 }
 
 .smartmentor-btn-dark-pink:hover {
     background-color: var(--smartmentor-dark-blue) !important;
     color: #FFFFFF;
-    border: 2px solid var(--smartmentor-dark-pink) !important;
 }
