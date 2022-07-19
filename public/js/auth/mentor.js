@@ -6845,9 +6845,13 @@ segmentsInput === null || segmentsInput === void 0 ? void 0 : segmentsInput.addE
   document.querySelectorAll('div.chip.btn[data-selected="true"]').forEach(function (elem) {
     elem.remove();
   });
-  event.value.forEach(function (value) {
-    addChip(value);
-  });
+
+  if (event.value !== null) {
+    event.value.forEach(function (value) {
+      addChip(value);
+    });
+  }
+
   runThroughInterestsChips();
 });
 segmentsChips === null || segmentsChips === void 0 ? void 0 : segmentsChips.addEventListener('add.mdb.chips', function (event) {

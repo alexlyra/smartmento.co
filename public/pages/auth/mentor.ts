@@ -314,9 +314,13 @@ segmentsInput?.addEventListener('valueChange.mdb.select', (event:EventWithValue)
     document.querySelectorAll('div.chip.btn[data-selected="true"]').forEach(elem => {
         elem.remove();
     });
-    event.value.forEach((value:String) => {
-        addChip(value);
-    });
+    
+    if (event.value !== null) {
+        event.value.forEach((value:String) => {
+            addChip(value);
+        });
+    }
+
     runThroughInterestsChips();
 });
 
