@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+import { baseURL } from '../../resources/js/app';
 
 const mentorBtn = document.querySelectorAll('button.mentorBtn');
 
@@ -17,7 +18,7 @@ mentorBtn.forEach((btn) => {
                     confirmButtonText: 'Fechar',
                 });
             } else if ((btn as HTMLElement).dataset.action === 'register') {
-                window.location.href = '/cadastrar/mentor';
+                window.location.href = `${baseURL}/cadastrar/mentor`;
             }
         }
     });

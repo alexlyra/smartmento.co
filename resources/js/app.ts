@@ -45,3 +45,5 @@ export type SelectOptions = {
     validFeedback?:String,
     visibleOptions?:Number,
 }
+
+export const baseURL:String = `${location.origin}/test`;

@@ -1,7 +1,8 @@
 import axios, { AxiosResponse } from 'axios';
+import { baseURL } from '../../../resources/js/app';
 
 const api = axios.create({
-    baseURL: `${location.origin}/api`,
+    baseURL: `${baseURL}/api`,
     timeout: 360000,
     headers: {
         'X-CSRF-TOKEN': `${document.getElementsByTagName('meta')['csrf-token'].content}`,
