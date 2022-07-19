@@ -56,7 +56,9 @@ div.user-badge div.user-informations div#displayEmailContainer {
 
 div.user-badge div.user-informations div#displaySegmentsContainer, 
 div.user-badge div.user-informations div#displayInterestsContainer {
-    height: 5em !important;
+    height: auto !important;
+    padding-top: .75em;
+    padding-bottom: .75em;
 }
 
 div.tab-number {
@@ -168,10 +170,29 @@ div.smartmentor-select div.form-outline input.select-input {
     background-color: #FFFFFF;
 }
 
-div.smartmentor-select .form-outline .form-control~.form-notch .form-notch-leading {
+div.smartmentor-select .form-outline .form-control~.form-notch .form-notch-leading,
+div.smartmentor-control .form-outline textarea.form-control~.form-notch .form-notch-leading {
     border-radius: 1rem 0 0 1rem;
 }
 
-div.smartmentor-select .form-outline .form-control~.form-notch .form-notch-trailing {
+div.smartmentor-select .form-outline .form-control~.form-notch .form-notch-trailing,
+div.smartmentor-control .form-outline textarea.form-control~.form-notch .form-notch-trailing {
     border-radius: 0 1rem 1rem 0;
+}
+
+div.smartmentor-control .form-outline textarea.form-control {
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+}
+
+div.smartmentor-group .input-group-text {
+    border-right: none !important;
+    border-top-left-radius: .75rem !important;
+    border-bottom-left-radius: .75rem !important;
+}
+
+div.smartmentor-group input {
+    border-left: none !important;
+    border-top-right-radius: .75rem !important;
+    border-bottom-right-radius: .75rem !important;
 }

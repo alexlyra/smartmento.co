@@ -1,9 +1,9 @@
-import { InputmaskInterface, InputmaskOptions, HTMLElementWithValue, SelectOptions, EventWithValue } from '../../../resources/js/app';
+import { InputmaskInterface, InputmaskOptions, HTMLElementWithValue, SelectOptions, EventWithValue, baseURL } from '../../../resources/js/app';
 import { slugify } from '../../assets/js/app';
 import * as Inputmask from 'mdb-ui-kit/plugins/js/inputmask.min.js';
 import * as mdb from 'mdb-ui-kit';
-import { interesses, segmentos } from '../../assets/js/functions';
-import { AxiosResponse } from 'axios';
+import api, { Error, interesses, LoadingMessage, segmentos, SwalUnprocessableContent } from '../../assets/js/functions';
+import axios, { AxiosResponse } from 'axios';
 import Swal from 'sweetalert2';
 
 type badgeType = {
@@ -41,6 +41,16 @@ const segmentsInput:HTMLElementWithValue|null = document.getElementById('segment
 const segmentsChips:HTMLElementWithValue|null = document.getElementById('segmentsChips');
 const segmentsChipsContainer:HTMLElementWithValue|null = document.querySelector(`div.showSegmentsChips`);
 const InterestsContainer:HTMLElementWithValue|null = document.getElementById('InterestsContainer');
+const challenge:HTMLElementWithValue|null = document.getElementById('challenge');
+const solution:HTMLElementWithValue|null = document.getElementById('solution');
+const free:HTMLElementWithValue|null = document.getElementById('free');
+const paid:HTMLElementWithValue|null = document.getElementById('paid');
+const price:HTMLElementWithValue|null = document.getElementById('price');
+const pricePer:HTMLElementWithValue|null = document.getElementById('price_per');
+const inPerson:HTMLElementWithValue|null = document.getElementById('in_person');
+const address:HTMLElementWithValue|null = document.getElementById('location');
+const password:HTMLElementWithValue|null = document.getElementById('password');
+const passwordConfirm:HTMLElementWithValue|null = document.getElementById('password_confirmation');
 
 const showTab = (elem:HTMLElement|null, called:String, next:String, prev:String): void => {
     nextAction?.setAttribute('data-next', `${next}`);
@@ -68,7 +78,7 @@ const whichTab = (tab:String|null): void => {
             case 'interests': showTab(tabs.interests, 'interests', 'challenge', 'segments'); break;
             case 'challenge': showTab(tabs.challenge, 'challenge', 'price', 'interests'); break;
             case 'price': showTab(tabs.price, 'price', 'finish', 'challenge'); break;
-            case 'finish': break;
+            case 'finish': submitMentor(); break;
             default: showTab(tabs.personalData, 'personalData', 'segments', '');
         }
     }
@@ -352,3 +362,80 @@ window.addEventListener('load', (event:Event) => {
         }
     }
 });
+
+const submitMentor = async () => {
+    type SEGMENT = {
+        name: String,
+        slug: String,
+        interests: any,
+    }
+    const data = {
+        firstName: firstName?.value,
+        lastName: lastName?.value,
+        email: email?.value,
+        birthday: birthdayInput?.value,
+        whatsapp: whatsappInput?.value,
+        photo: (badge.photo.children[0].tagName === 'IMG') ? (badge.photo.children[0] as HTMLElementWithValue).src : null,
+        segments: [] as Array<SEGMENT>,
+        challenge: challenge?.value,
+        solution: solution?.value,
+        price: price?.value,
+        pricePer: pricePer?.value,
+        priceType: paid?.checked ? 'paid' : 'free',
+        inPerson: inPerson?.checked ? true : false,
+        address: address?.value,
+        password: password?.value,
+        password_confirmation: passwordConfirm?.value,
+    }
+
+    const segments = document.querySelectorAll(`div.smartmentor-select-interests`);
+    segments.forEach(elm => {
+        const elem:HTMLElementWithValue = elm as HTMLElementWithValue;
+        const interests = {};
+
+        document.querySelectorAll(`div.smartmentor-select-interests[data-value="${elem.dataset.value}"] div.showInterestsChips-${elem.dataset.value} div.chip.btn`).forEach(e => {
+            const el:HTMLElementWithValue = e as HTMLElementWithValue;
+            interests[`${el.dataset.value}`] = `${(el.children[0] as HTMLElementWithValue).innerText}`;
+        });
+
+        data.segments.push({
+            name: `${elem.dataset.text}`,
+            slug: `${elem.dataset.value}`,
+            interests: interests,
+        });
+    });
+
+    console.log(data);
+
+    const submit = axios.create({
+        baseURL: `${baseURL}`,
+        timeout: 360000,
+        headers: {
+            'X-CSRF-TOKEN': `${document.getElementsByTagName('meta')['csrf-token'].content}`,
+        },
+    });
+    
+    submit.interceptors.response.use((response:AxiosResponse) => {
+        return response;
+    }, error => {
+        return error.response;
+    });
+    
+    LoadingMessage('Cadastrando...');
+
+    const response = await submit.post(`/cadastrar/mentor`, data);
+    
+    if (response.status === 422) {
+        SwalUnprocessableContent('Ocorreu um erro inesperado durante o cadastro.', response);
+    } else if (response.status === 200) {
+        Swal.fire({
+            icon: 'success',
+            title: `Cadastro realizado com sucesso!`,
+            customClass: {
+                confirmButton: `bg-smartmentor-dark-blue text-white`,
+            }
+        });
+    } else {
+        Error('Ocorreu um erro inesperado durante o cadastro.');
+    }
+}

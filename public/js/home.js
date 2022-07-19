@@ -2063,11 +2063,13 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "baseURL": () => (/* binding */ baseURL)
+/* harmony export */   "baseURL": () => (/* binding */ baseURL),
+/* harmony export */   "environment": () => (/* binding */ environment)
 /* harmony export */ });
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-var baseURL = "".concat(location.origin, "/test");
+var environment = 'local';
+var baseURL = environment === 'local' ? "".concat(location.origin) : "".concat(location.origin, "/test");
 
 /***/ }),
 

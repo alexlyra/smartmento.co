@@ -17,6 +17,8 @@ export interface InputmaskInterface {
 export interface HTMLElementWithValue extends HTMLElement {
     value?: any,
     files?: FileList,
+    src?: String,
+    checked?: Boolean,
 }
 export interface EventWithValue extends Event {
     value?: any,
@@ -46,4 +48,6 @@ export type SelectOptions = {
     visibleOptions?:Number,
 }
 
-export const baseURL:String = `${location.origin}/test`;
+export const environment:'local'|'production' = 'local';
+
+export const baseURL:String = environment === 'local' ? `${location.origin}` : `${location.origin}/test`;

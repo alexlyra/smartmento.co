@@ -71,3 +71,19 @@
     background-color: var(--smartmentor-dark-blue) !important;
     color: #FFFFFF;
 }
+
+.form-check-input[type=checkbox]:checked:focus,
+.form-check-input[type=checkbox]:checked {
+    background-color: #FFFFFF;
+}
+.form-check-input[type=checkbox]:checked:after {
+    border-color: #112958;
+}
+
+.form-check-input {
+    border-color: var(--smartmentor-dark-blue) !important;
+}
+
+.form-check-input:checked {
+    border-color: var(--smartmentor-light-blue) !important;
+}

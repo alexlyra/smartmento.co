@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Register\MentorRequest;
 use App\Models\System\Segments;
 use Illuminate\Http\Request;
 
@@ -12,8 +13,8 @@ class RegisterController extends Controller {
         return view('auth.mentor', compact('segments'));
     }
 
-    public function mentorRegister (Request $request) {
-
+    public function mentorRegister (MentorRequest $request) {
+        $input = $request->validated();
     }
 
     public function mentee () {

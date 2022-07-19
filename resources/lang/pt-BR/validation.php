@@ -186,6 +186,18 @@ return [
         'description' => 'descrição',
         'password_confirmation' => 'confirmação da senha',
         'current_password' => 'senha atual',
+        'challenge' => 'desafio',
+        'solution' => 'solução',
+        'birthday' => 'data de aniversário',
+        'firstName' => 'primeiro nome',
+        'lastName' => 'sobrenome',
+        'inPerson' => 'presencialmente',
+        'photo' => 'foto',
+        'price' => 'preço',
+        'pricePer' => 'preço por:',
+        'priceType' => 'tipo de mentoria',
+        'segments' => 'segmentos',
+        'interests' => 'interesses',
     ],
 
 ];
