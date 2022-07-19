@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::controller(App\Http\Controllers\ApiController::class)->group(function () {
+    Route::get('/segmentos', 'segments')->name('segments');
+    Route::get('/interesses', 'interests')->name('interests');
+});

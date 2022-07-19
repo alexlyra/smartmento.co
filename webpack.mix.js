@@ -14,7 +14,8 @@ const mix = require('laravel-mix');
 mix.ts([
     'resources/js/app.ts', 
     //'public/mdb/js/mdb.min.js', 
-    'public/assets/js/app.ts'
+    'public/assets/js/functions.ts',
+    'public/assets/js/app.ts',
 ], 'public/js')
 .postCss('public/mdb/css/mdb.min.css', 'public/css', [])
 .postCss('resources/css/app.css', 'public/css', [])

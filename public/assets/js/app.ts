@@ -20,7 +20,6 @@ export const slugify = (str:String): String => {
             return letter.toLowerCase();
         }
     });
-    console.log(newText);
 
     return newText
     .toString()                     // Cast to string

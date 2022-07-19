@@ -4,3 +4,11 @@
         Selecione uma ou mais áreas de interesse que tenham relação com sua atuação. Se preferir, adicione novos.
     </h6>
 </div>
+
+<div class="my-md-5 my-2">
+    <div class="row mx-0 px-0">
+        <div class="col-md-10 col-sm-10 col-12" id="InterestsContainer">
+            
+        </div>
+    </div>
+</div>
