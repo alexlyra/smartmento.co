@@ -251,12 +251,12 @@ const addSegmentInterests = (value:String, text:String, selected:Boolean = false
 
     const runThroughChips = () => {
         const chips:Array<String> = [];
-        document.querySelectorAll(`div.showSegmentsChips div.chip.btn`).forEach(elem => {
+        document.querySelectorAll(`div#InterestsContainer div.chip.btn`).forEach(elem => {
             const element:HTMLElementWithValue = elem as HTMLElementWithValue;
             const data = element.dataset;
             chips.push(`${(element.children[0] as HTMLElement).innerText}`);
         });
-        badge.segments.children[1].innerHTML = `${chips.join(', ')}`;
+        badge.interests.children[1].innerHTML = `${chips.join(', ')}`;
     }
 
     chips.addEventListener('add.mdb.chips', (event:Event) => {

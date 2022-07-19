@@ -24065,12 +24065,12 @@ var addSegmentInterests = function addSegmentInterests(value, text) {
 
   var runThroughChips = function runThroughChips() {
     var chips = [];
-    document.querySelectorAll("div.showSegmentsChips div.chip.btn").forEach(function (elem) {
+    document.querySelectorAll("div#InterestsContainer div.chip.btn").forEach(function (elem) {
       var element = elem;
       var data = element.dataset;
       chips.push("".concat(element.children[0].innerText));
     });
-    badge.segments.children[1].innerHTML = "".concat(chips.join(', '));
+    badge.interests.children[1].innerHTML = "".concat(chips.join(', '));
   };
 
   chips.addEventListener('add.mdb.chips', function (event) {
