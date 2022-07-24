@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\System\Interests;
+use App\Models\System\Role;
 use App\Models\System\Segments;
 use App\Models\Users\Interest;
 use Illuminate\Database\Seeder;
@@ -11,7 +12,23 @@ use Illuminate\Support\Str;
 
 class Push extends Seeder {
     public function run () {
+        $this->Roles();
         $this->Segments();
+    }
+
+    private function Roles () {
+        $data = [
+            'admin' => 'Administrador',
+            'mentor' => 'Mentor',
+            'mentee' => 'Mentee',
+        ];
+
+        foreach ($data as $tag => $name) {
+            $role = Role::where('tag', Str::lower($tag))->count() > 0 ? Role::where('tag', $tag)->first() : new Role;
+            $role->tag = Str::lower($tag);
+            $role->name = $name;
+            $role->save();
+        }
     }
 
     private function Segments () {

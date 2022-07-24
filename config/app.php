@@ -176,9 +176,11 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         App\Providers\HelperServiceProvider::class,
+        App\Providers\FacadeServiceProvider::class,
 
         Ixudra\Curl\CurlServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
     ],
 
@@ -237,6 +239,8 @@ return [
 
         'Curl' => Ixudra\Curl\Facades\Curl::class,
         'PDF' => \Barryvdh\DomPDF\Facade\Pdf::class,
+
+        'UserManager' => \App\Services\UserService\UserManagerFacade::class,
 
     ],
 

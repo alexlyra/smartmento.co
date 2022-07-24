@@ -2080,7 +2080,16 @@ var slugify = function slugify(str) {
     return pos;
   };
 
-  var newText = str.split('').map(function (letter, i) {
+  var convertCustom = function convertCustom(strings) {
+    var custom = ['#', '+'];
+    var conv = ['sharpe', 'plus'];
+    custom.forEach(function (c, index) {
+      strings = strings.replaceAll("".concat(c), conv[index]);
+    });
+    return strings;
+  };
+
+  var newText = convertCustom(str).split('').map(function (letter, i) {
     var pos = convert(letter);
 
     if (pos !== null) {

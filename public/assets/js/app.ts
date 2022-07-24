@@ -11,8 +11,16 @@ export const slugify = (str:String): String => {
         });
         return pos;
     }
+    const convertCustom = (strings:String): String => {
+        const custom = ['#', '+'];
+        const conv = ['sharpe', 'plus'];
+        custom.forEach((c:String, index:number) => {
+            strings = strings.replaceAll(`${c}`, conv[index]);
+        });
+        return strings;
+    }
 
-    const newText = str.split('').map((letter, i) => {
+    const newText = convertCustom(str).split('').map((letter, i) => {
         const pos = convert(letter);
         if (pos !== null) {
             return letter.toLowerCase().replace(new RegExp(from.charAt(pos), 'g'), to.charAt(pos));

@@ -433,6 +433,11 @@ const submitMentor = async () => {
             title: `Cadastro realizado com sucesso!`,
             customClass: {
                 confirmButton: `bg-smartmentor-dark-blue text-white`,
+            },
+            allowOutsideClick: false,
+        }).then(result => {
+            if (result.isConfirmed) {
+                location.href = `${baseURL}/email/verificacao`;
             }
         });
     } else {

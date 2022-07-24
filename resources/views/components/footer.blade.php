@@ -1,4 +1,4 @@
-<footer>
+<footer {!! $attributes->has('class') ? "class=\"{$attributes->get('class')}\"" : '' !!}>
     <div class="menu">
         <div class="category">
             <a href="" class="mb-3">Home</a>

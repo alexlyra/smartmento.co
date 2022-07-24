@@ -2080,7 +2080,16 @@ var slugify = function slugify(str) {
     return pos;
   };
 
-  var newText = str.split('').map(function (letter, i) {
+  var convertCustom = function convertCustom(strings) {
+    var custom = ['#', '+'];
+    var conv = ['sharpe', 'plus'];
+    custom.forEach(function (c, index) {
+      strings = strings.replaceAll("".concat(c), conv[index]);
+    });
+    return strings;
+  };
+
+  var newText = convertCustom(str).split('').map(function (letter, i) {
     var pos = convert(letter);
 
     if (pos !== null) {
@@ -24368,6 +24377,11 @@ var submitMentor = function submitMentor() {
                 title: "Cadastro realizado com sucesso!",
                 customClass: {
                   confirmButton: "bg-smartmentor-dark-blue text-white"
+                },
+                allowOutsideClick: false
+              }).then(function (result) {
+                if (result.isConfirmed) {
+                  location.href = "".concat(_resources_js_app__WEBPACK_IMPORTED_MODULE_0__.baseURL, "/email/verificacao");
                 }
               });
             } else {

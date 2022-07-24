@@ -18,10 +18,16 @@ Route::controller(App\Http\Controllers\LandPageController::class)->group(functio
 });
 
 
-Route::prefix('/cadastrar')->name('register.')->controller(App\Http\Controllers\Auth\RegisterController::class)->group(function () {
+Route::prefix('/cadastrar')->name('register.')->middleware(['guest'])->controller(App\Http\Controllers\Auth\RegisterController::class)->group(function () {
     Route::get('/mentor', 'mentor')->name('mentor');
     Route::post('/mentor', 'mentorRegister')->name('mentor.register');
 
     Route::get('/mentee', 'mentee')->name('mentee');
     Route::post('/mentee', 'menteeRegister')->name('mentee.register');
+});
+
+Route::prefix('/email')->name('verification.')->controller(App\Http\Controllers\Auth\EmailVerificationController::class)->group(function () {
+    Route::get('/verificacao', 'mustVerify')->middleware('auth')->name('notice');
+    Route::get('/verificacao/{id}/{hash}', 'verify')->middleware(['auth', 'signed'])->name('verify');
+    Route::post('/reenviar', 'send')->middleware(['auth', 'throttle:6,1'])->name('send');
 });

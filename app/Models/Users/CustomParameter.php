@@ -2,6 +2,7 @@
 
 namespace App\Models\Users;
 
+use App\Casts\Json;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -23,6 +24,7 @@ class CustomParameter extends Model {
     ];
     protected $casts = [
         'active' => 'boolean',
+        'content' => Json::class,
     ];
 
     public function user () {
