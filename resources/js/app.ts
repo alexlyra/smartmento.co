@@ -48,6 +48,6 @@ export type SelectOptions = {
     visibleOptions?:Number,
 }
 
-export const environment:'local'|'production' = 'local';
+export const environment:String = 'production';
 
 export const baseURL:String = environment === 'local' ? `${location.origin}` : `${location.origin}/test`;
