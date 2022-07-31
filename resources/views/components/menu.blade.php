@@ -8,7 +8,18 @@
             <img src="{{ asset('storage/images/logo.png') }}" class="text-center" width="105" height="50" data-view="small" alt="SmartMentor">
 
             <div class="loginNavOptionsSmall">
-                <a class="smartmentor-dark-blue font-weight-bold" href="#">Login</a>
+                @guest
+                    <a class="smartmentor-dark-blue font-weight-bold" href="{{ route('login') }}">Login</a>
+                @endguest
+                @auth
+                    <a class="smartmentor-dark-blue font-weight-bold" href="">
+                        @if (auth()->user()->photo)
+                            <img src="{{ auth()->user()->photo }}" class="img-fluid rounded-circle" style="width: 32px;height: 32px">
+                        @else
+                            <i class="fa-regular fa-circle-user" style="font-size: 32px"></i>
+                        @endif
+                    </a>
+                @endauth
             </div>
 
             <div class="collapse navbar-collapse mx-md-3" id="navbarSmartMentor">
@@ -27,12 +38,26 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav loginNavOptions">
-                    <li class="nav-item">
-                        <a class="nav-link smartmentor-dark-blue font-weight-bold px-1" href="#">Inscreva-se</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link smartmentor-dark-blue font-weight-bold px-1" href="#">Login</a>
-                    </li>
+                    @auth
+                        <li class="nav-item">
+                            <a href="" class="nav-link smartmentor-dark-blue font-weight-bold px-1 d-flex align-items-center">
+                                @if (auth()->user()->photo)
+                                    <img src="{{ auth()->user()->photo }}" class="img-fluid rounded-circle" style="width: 32px;height: 32px">
+                                @else
+                                    <i class="fa-regular fa-circle-user" style="font-size: 32px"></i>
+                                @endif
+                                <span class="ms-2">{{ auth()->user()->full_name }}</span>    
+                            </a>    
+                        </li>    
+                    @endauth
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link smartmentor-dark-blue font-weight-bold px-1" href="#">Inscreva-se</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link smartmentor-dark-blue font-weight-bold px-1" href="{{ route('login') }}">Login</a>
+                        </li>
+                    @endguest
                 </ul>
             </div>
         </div>

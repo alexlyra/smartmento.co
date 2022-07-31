@@ -23,4 +23,5 @@ mix.ts([
 .sourceMaps(false, 'source-map');
 
 mix.ts(['public/pages/auth/mentor.ts'], 'public/js/auth/mentor.js')
+.ts(['public/pages/auth/login.ts'], 'public/js/auth/login.js')
 .ts(['public/pages/home.ts'], 'public/js/home.js');
