@@ -33,4 +33,11 @@ class LoginController extends Controller {
 
         return redirect()->route('index');
     }
+
+    public function logout () {
+        if (Auth::check()) {
+            Auth::logout(); 
+        }
+        return redirect()->route('index');
+    }
 }

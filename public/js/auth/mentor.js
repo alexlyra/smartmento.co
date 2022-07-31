@@ -2063,8 +2063,12 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "UserPending": () => (/* binding */ UserPending),
 /* harmony export */   "slugify": () => (/* binding */ slugify)
 /* harmony export */ });
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
+
 var slugify = function slugify(str) {
   var from = "ãàáäâẽèéëêìíïîõòóöôùúüûñç·/_,:;";
   var to = "aaaaaeeeeeiiiiooooouuuunc------";
@@ -2106,6 +2110,21 @@ var slugify = function slugify(str) {
   .replace(/[^\w\-]+/g, '') // Remove all non-word chars
   .replace(/\-\-+/g, '-'); // Replace multiple - with single -
 };
+var UserPending = function UserPending(event, button) {
+  sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+    icon: 'info',
+    text: 'Usuário está pendente de aprovação em nosso sistema, você irá receber um e-mail avisando assim que seu perfil for aprovado!',
+    customClass: {
+      confirmButton: 'smartmentor-btn smartmentor-btn-dark-pink',
+      icon: 'smartmentor-dark-blue border-smartmentor-dark-blue'
+    }
+  });
+};
+document.querySelectorAll("[data-user=\"pending\"]").forEach(function (elem) {
+  elem.addEventListener('click', function (event) {
+    UserPending(event, elem);
+  });
+});
 
 /***/ }),
 

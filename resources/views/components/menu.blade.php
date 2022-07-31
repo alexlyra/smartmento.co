@@ -13,11 +13,23 @@
                 @endguest
                 @auth
                     <a class="smartmentor-dark-blue font-weight-bold" href="">
-                        @if (auth()->user()->photo)
-                            <img src="{{ auth()->user()->photo }}" class="img-fluid rounded-circle" style="width: 32px;height: 32px">
-                        @else
-                            <i class="fa-regular fa-circle-user" style="font-size: 32px"></i>
-                        @endif
+                        <div class="dropdown">
+                            <a class="dropdown-toggle d-flex align-items-center hidden-arrow smartmentor-dark-blue font-weight-bold" href="#" id="avatarMenu" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                                @if (auth()->user()->photo)
+                                    <img src="{{ auth()->user()->photo }}" class="img-fluid rounded-circle" style="width: 32px;height: 32px" loading="lazy">
+                                @else
+                                    <i class="fa-regular fa-circle-user" style="font-size: 32px"></i>
+                                @endif
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="avatarMenu">
+                                <li>
+                                    <a class="dropdown-item" href="#" data-user="pending">Minha conta</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}">Sair</a>
+                                </li>
+                            </ul>
+                        </div>
                     </a>
                 @endauth
             </div>
@@ -39,16 +51,26 @@
                 </ul>
                 <ul class="navbar-nav loginNavOptions">
                     @auth
-                        <li class="nav-item">
-                            <a href="" class="nav-link smartmentor-dark-blue font-weight-bold px-1 d-flex align-items-center">
-                                @if (auth()->user()->photo)
-                                    <img src="{{ auth()->user()->photo }}" class="img-fluid rounded-circle" style="width: 32px;height: 32px">
-                                @else
-                                    <i class="fa-regular fa-circle-user" style="font-size: 32px"></i>
-                                @endif
-                                <span class="ms-2">{{ auth()->user()->full_name }}</span>    
-                            </a>    
-                        </li>    
+                        <li class="nav-item d-flex align-items-center">
+                            <div class="dropdown">
+                                <a class="dropdown-toggle d-flex align-items-center hidden-arrow smartmentor-dark-blue font-weight-bold" href="#" id="avatarMenu" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                                    {{ auth()->user()->full_name }}
+                                    @if (auth()->user()->photo)
+                                        <img src="{{ auth()->user()->photo }}" class="img-fluid rounded-circle ms-2" style="width: 32px;height: 32px" loading="lazy">
+                                    @else
+                                        <i class="fa-regular fa-circle-user ms-2" style="font-size: 32px"></i>
+                                    @endif
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="avatarMenu">
+                                    <li>
+                                        <a class="dropdown-item" href="#" data-user="pending">Minha conta</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('logout') }}">Sair</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>   
                     @endauth
                     @guest
                         <li class="nav-item">

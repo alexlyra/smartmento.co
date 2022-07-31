@@ -14,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::prefix('/login')->controller(App\Http\Controllers\Auth\LoginController::class)->group(function () {
-    Route::get('/', 'index')->name('login');
-    Route::post('/', 'login')->name('authenticate');
+Route::controller(App\Http\Controllers\Auth\LoginController::class)->group(function () {
+    Route::get('/login', 'index')->name('login');
+    Route::post('/login', 'login')->name('authenticate');
+    Route::get('/sair', 'logout')->name('logout');
 });
 
 Route::controller(App\Http\Controllers\LandPageController::class)->group(function () {

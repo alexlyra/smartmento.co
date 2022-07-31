@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 export const slugify = (str:String): String => {
     const from = "ãàáäâẽèéëêìíïîõòóöôùúüûñç·/_,:;"
     const to = "aaaaaeeeeeiiiiooooouuuunc------";
@@ -38,3 +40,20 @@ export const slugify = (str:String): String => {
     .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
     .replace(/\-\-+/g, '-');        // Replace multiple - with single -
 }
+
+export const UserPending = (event:Event, button:HTMLElement) => {
+    Swal.fire({
+        icon: 'info',
+        text: 'Usuário está pendente de aprovação em nosso sistema, você irá receber um e-mail avisando assim que seu perfil for aprovado!',
+        customClass: {
+            confirmButton: 'smartmentor-btn smartmentor-btn-dark-pink',
+            icon: 'smartmentor-dark-blue border-smartmentor-dark-blue',
+        },
+    });
+}
+
+document.querySelectorAll(`[data-user="pending"]`).forEach(elem => {
+    elem.addEventListener('click', event => {
+        UserPending(event, elem as HTMLElement);
+    });
+});
