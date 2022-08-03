@@ -27,7 +27,9 @@ mentorBtn.forEach((btn) => {
 const ChallengeToday = document.getElementById('ChallengeToday');
 ChallengeToday?.addEventListener('click', (event:Event) => {
     event.preventDefault();
-    Swal.fire({
+
+    window.open ("https://docs.google.com/forms/d/e/1FAIpQLSda9aiyjgC1N9T-63IHthKVnvbJTd7zNrvI3-RCKbK28g7ZYQ/viewform?usp=sf_link")
+    /* Swal.fire({
         icon: 'info',
         iconHtml: `<i class="fa-light fa-triangle-person-digging p-2"></i>`,
         title: 'Em breve disponível',
@@ -36,5 +38,5 @@ ChallengeToday?.addEventListener('click', (event:Event) => {
             icon: 'border-smartmentor-dark-blue p-2',
         },
         confirmButtonText: 'Fechar',
-    });
+    }); */
 });
