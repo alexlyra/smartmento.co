@@ -50,4 +50,4 @@ export type SelectOptions = {
 
 export const environment:String = 'production';
 
-export const baseURL:String = environment === 'local' ? `${location.origin}` : `${location.origin}/test`;
+export const baseURL:String = environment === 'production' ? `${location.origin}` : `${location.origin}/test`;
