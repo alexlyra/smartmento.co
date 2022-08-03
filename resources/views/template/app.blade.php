@@ -26,6 +26,7 @@
         @yield('content')
         <x-footer />
         @yield('modals')
+        <script src="{{ asset('mdb/js/mdb-pt_BR.js') }}"></script>
         <script src="{{ asset('js/app.js') }}"></script>
         @stack('scripts')
     </body>

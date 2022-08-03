@@ -8,7 +8,30 @@
             <img src="{{ asset('storage/images/logo.png') }}" class="text-center" width="105" height="50" data-view="small" alt="SmartMentor">
 
             <div class="loginNavOptionsSmall">
-                <a class="smartmentor-dark-blue font-weight-bold" href="#">Login</a>
+                @guest
+                    <a class="smartmentor-dark-blue font-weight-bold" href="{{ route('login') }}">Login</a>
+                @endguest
+                @auth
+                    <a class="smartmentor-dark-blue font-weight-bold" href="">
+                        <div class="dropdown">
+                            <a class="dropdown-toggle d-flex align-items-center hidden-arrow smartmentor-dark-blue font-weight-bold" href="#" id="avatarMenu" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                                @if (auth()->user()->photo)
+                                    <img src="{{ auth()->user()->photo }}" class="img-fluid rounded-circle" style="width: 32px;height: 32px" loading="lazy">
+                                @else
+                                    <i class="fa-regular fa-circle-user" style="font-size: 32px"></i>
+                                @endif
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="avatarMenu">
+                                <li>
+                                    <a class="dropdown-item" href="#" data-user="pending">Minha conta</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}">Sair</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </a>
+                @endauth
             </div>
 
             <div class="collapse navbar-collapse mx-md-3" id="navbarSmartMentor">
@@ -27,12 +50,36 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav loginNavOptions">
-                    <li class="nav-item">
-                        <a class="nav-link smartmentor-dark-blue font-weight-bold px-1" href="#">Inscreva-se</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link smartmentor-dark-blue font-weight-bold px-1" href="#">Login</a>
-                    </li>
+                    @auth
+                        <li class="nav-item d-flex align-items-center">
+                            <div class="dropdown">
+                                <a class="dropdown-toggle d-flex align-items-center hidden-arrow smartmentor-dark-blue font-weight-bold" href="#" id="avatarMenu" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                                    {{ auth()->user()->full_name }}
+                                    @if (auth()->user()->photo)
+                                        <img src="{{ auth()->user()->photo }}" class="img-fluid rounded-circle ms-2" style="width: 32px;height: 32px" loading="lazy">
+                                    @else
+                                        <i class="fa-regular fa-circle-user ms-2" style="font-size: 32px"></i>
+                                    @endif
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="avatarMenu">
+                                    <li>
+                                        <a class="dropdown-item" href="#" data-user="pending">Minha conta</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('logout') }}">Sair</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>   
+                    @endauth
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link smartmentor-dark-blue font-weight-bold px-1" href="#">Inscreva-se</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link smartmentor-dark-blue font-weight-bold px-1" href="{{ route('login') }}">Login</a>
+                        </li>
+                    @endguest
                 </ul>
             </div>
         </div>

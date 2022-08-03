@@ -13,10 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::controller(App\Http\Controllers\Auth\LoginController::class)->group(function () {
+    Route::get('/login', 'index')->name('login');
+    Route::post('/login', 'login')->name('authenticate');
+    Route::get('/sair', 'logout')->name('logout');
+});
+
 Route::controller(App\Http\Controllers\LandPageController::class)->group(function () {
     Route::get('/', 'index')->name('index');
 });
-
 
 Route::prefix('/cadastrar')->name('register.')->middleware(['guest'])->controller(App\Http\Controllers\Auth\RegisterController::class)->group(function () {
     Route::get('/mentor', 'mentor')->name('mentor');

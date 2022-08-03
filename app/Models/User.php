@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -45,6 +46,12 @@ class User extends Authenticatable implements MustVerifyEmail {
         'email_verified_at' => 'datetime',
         'active' => 'boolean',
     ];
+
+    public static function booted () {
+        static::addGlobalScope('NotDeleted', function (Builder $builder) {
+            $builder->whereNull('users.deleted_at');
+        });
+    }
 
     public function setFirstNameAttribute (string $value): void {
         $this->attributes['first_name'] = ucfirst($value);
