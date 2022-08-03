@@ -1,7 +1,7 @@
 <footer {!! $attributes->has('class') ? "class=\"{$attributes->get('class')}\"" : '' !!}>
     <div class="menu">
         <div class="category">
-            <a href="" class="mb-3">Home</a>
+            <a href="{{ route('index') }}" class="mb-3">Home</a>
         </div>
         <div class="category">
             <a href="" class="mb-3">Sobre a Smartmentor</a>

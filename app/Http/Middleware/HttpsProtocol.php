@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Str;
 
 class HttpsProtocol {
     /**
@@ -16,7 +17,7 @@ class HttpsProtocol {
      */
     public function handle (Request $request, Closure $next) {
         if (!$request->secure() && App::environment() === 'production') {
-            return redirect()->secure($request->getRequestUri());
+            return redirect()->secure(Str::replace('/test', '', $request->getRequestUri()));
         }
 
         return $next($request);
