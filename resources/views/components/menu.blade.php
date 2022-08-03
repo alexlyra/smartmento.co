@@ -5,7 +5,7 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
 
-            <img src="{{ asset('storage/images/logo.png') }}" class="text-center" width="105" height="50" data-view="small" alt="SmartMentor">
+            <img src="{{ asset('storage/images/logo.png') }}" class="text-center" width="105" height="50" data-view="small" alt="SmartMentor" onclick="window.location.href= '{{ route('index') }}'">
 
             <div class="loginNavOptionsSmall">
                 @guest
