@@ -40,3 +40,11 @@ ChallengeToday?.addEventListener('click', (event:Event) => {
         confirmButtonText: 'Fechar',
     }); */
 });
+
+const ChallengeToday1 = document.getElementById('ChallengeToday1');
+ChallengeToday1?.addEventListener('click', (event:Event) => {
+    event.preventDefault();
+
+    window.open ("https://docs.google.com/forms/d/e/1FAIpQLSda9aiyjgC1N9T-63IHthKVnvbJTd7zNrvI3-RCKbK28g7ZYQ/viewform?usp=sf_link")
+
+});

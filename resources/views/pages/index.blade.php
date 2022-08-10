@@ -58,7 +58,7 @@
     </section>
 
     <section id="funcionamento">
-        <h3>Entenda como funciona:</h3>
+        <h3 >Entenda como funciona:</h3>
 
         <div class="passos">
             <x-home.entenda-funcionamento-passo :passo=1 text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sollicitudin lorem eget pulvinar tempor. Vivamus id tempor nulla. Vestibulum dui est, egestas non convallis sed, malesuada non orci. Vivamus vel odio vel justo condimentum commodo imperdiet malesuada lectus. Integer scelerisque vestibulum dapibus." />
@@ -66,7 +66,7 @@
             <x-home.entenda-funcionamento-passo :passo=3 text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sollicitudin lorem eget pulvinar tempor. Vivamus id tempor nulla. Vestibulum dui est, egestas non convallis sed, malesuada non orci. Vivamus vel odio vel justo condimentum commodo imperdiet malesuada lectus. Integer scelerisque vestibulum dapibus." />
         </div>
 
-        <button>Experimente agora</button>
+        <button id="ChallengeToday1">Experimente agora</button>
     </section>
 @endsection
 
