@@ -68,7 +68,7 @@
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('js/auth/mentor.js') }}"></script>
+    <script src="{{ asset('js/auth/mentor.js?v=0.0.2.0') }}"></script>
 @endpush
 
 @push('styles')

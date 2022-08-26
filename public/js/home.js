@@ -23607,16 +23607,6 @@ var ChallengeToday = document.getElementById('ChallengeToday');
 ChallengeToday === null || ChallengeToday === void 0 ? void 0 : ChallengeToday.addEventListener('click', function (event) {
   event.preventDefault();
   window.open("https://docs.google.com/forms/d/e/1FAIpQLSda9aiyjgC1N9T-63IHthKVnvbJTd7zNrvI3-RCKbK28g7ZYQ/viewform?usp=sf_link");
-  /* Swal.fire({
-      icon: 'info',
-      iconHtml: `<i class="fa-light fa-triangle-person-digging p-2"></i>`,
-      title: 'Em breve disponível',
-      customClass: {
-          confirmButton: 'bg-smartmentor-dark-blue rounded-9',
-          icon: 'border-smartmentor-dark-blue p-2',
-      },
-      confirmButtonText: 'Fechar',
-  }); */
 });
 var ChallengeToday1 = document.getElementById('ChallengeToday1');
 ChallengeToday1 === null || ChallengeToday1 === void 0 ? void 0 : ChallengeToday1.addEventListener('click', function (event) {
