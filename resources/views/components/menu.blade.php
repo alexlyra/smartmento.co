@@ -72,10 +72,7 @@
                             </div>
                         </li>   
                     @endauth
-                    @guest
-                        <li class="nav-item">
-                            <a class="nav-link smartmentor-dark-blue font-weight-bold px-1" href="#">Inscreva-se</a>
-                        </li>
+                    @guest            
                         <li class="nav-item">
                             <a class="nav-link smartmentor-dark-blue font-weight-bold px-1" href="{{ route('login') }}">Login</a>
                         </li>
