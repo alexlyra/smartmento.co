@@ -10,16 +10,16 @@
             <a href="" class="mb-3">Quero usar o Guru</a>
         </div>
         <div class="category">
-            <a href="" class="mb-3">Quero ser Mentor</a>
+            <a href="https://smartmentor.com.br/test/cadastrar/mentor" class="mb-3">Quero ser Mentor</a>
         </div>
         <div class="category">
             <a href="" class="mb-3">Contato</a>
             <div class="mt-3">
-                <a href="" class="mx-2">
+                <a href="https://wa.link/z2vnf1" class="mx-2">
                     <i class="fa-brands fa-whatsapp fa-2x"></i>
                 </a>
-                <a href="" class="mx-2">
-                    <i class="fa-brands fa-facebook fa-2x"></i>
+                <a href="https://www.instagram.com/smartmentorbr/" class="mx-2">
+                    <i class="fa-brands fa-instagram fa-2x"></i>
                 </a>
             </div>
         </div>

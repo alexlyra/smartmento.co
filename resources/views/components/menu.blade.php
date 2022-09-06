@@ -43,10 +43,10 @@
                         <a class="nav-link smartmentor-dark-blue font-weight-bold" href="#">Sobre a Smartmentor</a>
                     </li>
                     <li class="nav-item mx-md-4">
-                        <a class="nav-link smartmentor-dark-blue font-weight-bold" href="#">Guru</a>
+                        <a class="nav-link smartmentor-dark-blue font-weight-bold" href="https://wa.link/z2vnf1">Guru</a>
                     </li>
                     <li class="nav-item mx-md-4">
-                        <a class="nav-link smartmentor-dark-blue font-weight-bolder" href="#">Planos</a>
+                        <a class="nav-link smartmentor-dark-blue font-weight-bolder" href="https://wa.link/z2vnf1">Planos</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav loginNavOptions">
