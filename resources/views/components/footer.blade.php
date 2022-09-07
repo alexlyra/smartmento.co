@@ -7,7 +7,7 @@
             <a href="" class="mb-3">Sobre a Smartmentor</a>
         </div>
         <div class="category">
-            <a href="" class="mb-3">Quero usar o Guru</a>
+            <a href="https://wa.link/z2vnf1" class="mb-3">Quero usar o Guru</a>
         </div>
         <div class="category">
             <a href="https://smartmentor.com.br/test/cadastrar/mentor" class="mb-3">Quero ser Mentor</a>
