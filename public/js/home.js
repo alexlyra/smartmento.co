@@ -23606,12 +23606,12 @@ mentorBtn.forEach(function (btn) {
 var ChallengeToday = document.getElementById('ChallengeToday');
 ChallengeToday === null || ChallengeToday === void 0 ? void 0 : ChallengeToday.addEventListener('click', function (event) {
   event.preventDefault();
-  window.open("https://docs.google.com/forms/d/e/1FAIpQLSda9aiyjgC1N9T-63IHthKVnvbJTd7zNrvI3-RCKbK28g7ZYQ/viewform?usp=sf_link");
+  window.open("https://docs.google.com/forms/d/e/1FAIpQLSdlXPlZVJ7eKNZ24OT2AONXsWw1xv2vusghSBUiEu1ybkruyQ/viewform");
 });
 var ChallengeToday1 = document.getElementById('ChallengeToday1');
 ChallengeToday1 === null || ChallengeToday1 === void 0 ? void 0 : ChallengeToday1.addEventListener('click', function (event) {
   event.preventDefault();
-  window.open("https://docs.google.com/forms/d/e/1FAIpQLSda9aiyjgC1N9T-63IHthKVnvbJTd7zNrvI3-RCKbK28g7ZYQ/viewform?usp=sf_link");
+  window.open("https://docs.google.com/forms/d/e/1FAIpQLSdlXPlZVJ7eKNZ24OT2AONXsWw1xv2vusghSBUiEu1ybkruyQ/viewform");
 });
 })();
 
