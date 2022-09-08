@@ -14,9 +14,9 @@
 
 .tdh-2 {
     position: absolute;
-    width: 50%;
+    width: 75%;
     height: 74px;
-    left: calc(50% - calc(50% / 2));
+    left: calc(50% - calc(75% / 2));
     top: 25%;
     font-style: normal;
     font-weight: 500;
@@ -25,6 +25,21 @@
     text-align: center;
 
     color: #FFFFFF;
+}
+
+.tdh-2_2 {
+    position: absolute;
+    width: 75%;
+    height: 74px;
+    left: calc(50% - calc(75% / 2));
+    top: 40%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 23px;
+    text-align: center;
+
+    color: #FFFFFF; 
 }
 
 .tdh-3 {
@@ -151,6 +166,9 @@ section#funcionamento button:hover {
 @media (max-width: 768px) {
     .tdh-1 {
         font-size: 1.25em;
+        width: 100%;
+        height: 51px;
+        left: calc(50% - calc(100% / 2));
     }
 
     .tdh-2 {
@@ -158,6 +176,14 @@ section#funcionamento button:hover {
         width: 90%;
         left: calc(50% - calc(90% / 2));
         top: 25%;
+        text-align: center;
+    }
+    
+    .tdh-2_2 {
+        font-size: 1em;
+        width: 90%;
+        left: calc(50% - calc(90% / 2));
+        top: 40%;
         text-align: center;
     }
 
