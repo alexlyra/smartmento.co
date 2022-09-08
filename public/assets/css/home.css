@@ -163,6 +163,18 @@ section#funcionamento button:hover {
     border: 3px solid #E7455F;
 }
 
+@media (min-width: 1367px) {
+    .tdh-2_2 {
+        top: 30%;
+    }
+}
+
+@media (max-width: 1465px) {
+    section#funcionamento div.passos {
+        justify-content: start;
+    }
+}
+
 @media (max-width: 768px) {
     .tdh-1 {
         font-size: 1.25em;
