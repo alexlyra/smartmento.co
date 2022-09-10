@@ -2,11 +2,19 @@
 
 namespace App\Models;
 
+use App\Models\System\Interests;
+use App\Models\System\Role as SystemRole;
+use App\Models\System\Segments;
+use App\Models\Users\Interest;
+use App\Models\Users\Role;
+use App\Models\Users\Segment;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Collection;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail {
@@ -47,7 +55,7 @@ class User extends Authenticatable implements MustVerifyEmail {
         'active' => 'boolean',
     ];
 
-    public static function booted () {
+    public static function booted (): void {
         static::addGlobalScope('NotDeleted', function (Builder $builder) {
             $builder->whereNull('users.deleted_at');
         });
@@ -63,5 +71,55 @@ class User extends Authenticatable implements MustVerifyEmail {
 
     public function getFullNameAttribute (): string {
         return "{$this->first_name} {$this->last_name}";
+    }
+
+    public function getIsMentorAttribute (): bool {
+        return $this->roles->where('tag', 'mentor')->count() > 0 ? true : false;
+    }
+
+    public function getSegmentsAttribute (): Collection {
+        $segments = $this->segmentsRelation->map(function ($item, $key) {
+            return $item->name;
+        });
+        return $segments;
+    }
+
+    public function getInterestsAttribute (): Collection {
+        $interests = $this->interestsRelation->map(function ($item, $key) {
+            return $item->name;
+        });
+        return $interests;
+    }
+
+    public function getStatusIconAttribute (): string {
+        $icon = "fa-solid fa-seal-question";
+
+        switch ($this->status) {
+            case 'pending': $icon = 'fa-solid fa-clock-rotate-left text-info'; break;
+            case 'approved': $icon = 'fa-solid fa-badge-check text-success'; break;
+            case 'unapproved': $icon = 'fa-solid fa-circle-xmark text-danger'; break;
+            case 'authorized': $icon = 'fa-solid fa-user-check text-success'; break;
+            case 'unauthorized': $icon = 'fa-solid fa-user-xmark text-danger'; break;
+            case 'analyzing': $icon = 'fa-solid fa-magnifying-glass-chart text-info'; break;
+            case 'reviewing': $icon = 'fa-solid fa-print-magnifying-glass text-info'; break;
+            case 'reported': $icon = 'fa-solid fa-circle-exclamation text-warning'; break;
+            case 'cancelled': $icon = 'fa-solid fa-ban text-danger'; break;
+            case 'robot': $icon = 'fa-solid fa-robot-astromech text-secondary'; break;
+            case 'deleted': $icon = 'fa-solid fa-trash-can text-danger'; break;
+        }
+        
+        return $icon;
+    }
+
+    public function roles (): HasManyThrough {
+        return $this->hasManyThrough(SystemRole::class, Role::class, 'user_id', 'id', 'id', 'role_id');
+    }
+
+    public function segmentsRelation (): HasManyThrough {
+        return $this->hasManyThrough(Segments::class, Segment::class, 'user_id', 'id', 'id', 'segment_id');
+    }
+
+    public function interestsRelation (): HasManyThrough {
+        return $this->hasManyThrough(Interests::class, Interest::class, 'user_id', 'id', 'id', 'interest_id');
     }
 }

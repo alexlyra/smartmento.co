@@ -18,17 +18,17 @@ class LoginController extends Controller {
         $user = User::where('email', $request->email)->first();
 
         if (!$user) {
-            return back()->withErrors(['E-mail não encontrado em nossos registros!']);
+            return back()->withErrors(['E-mail não encontrado em nossos registros!'])->withInput($request->all());
         }
 
         if (!Hash::check($request->password, $user->password) || !$user->active) {
-            return back()->withErrors('E-mail ou senha inválido!');
+            return back()->withErrors('E-mail ou senha inválido!')->withInput($request->all());
         }
 
         $auth = Auth::attempt($request->validated());
 
         if (!Auth::check()) {
-            return back()->withErrors('Não foi possível autenticar o usuário!');
+            return back()->withErrors('Não foi possível autenticar o usuário!')->withInput($request->all());
         }
 
         return redirect()->route('index');

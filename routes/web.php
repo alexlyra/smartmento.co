@@ -37,3 +37,7 @@ Route::prefix('/email')->name('verification.')->controller(App\Http\Controllers\
     Route::get('/verificacao/{id}/{hash}', 'verify')->middleware(['auth', 'signed'])->name('verify');
     Route::post('/reenviar', 'send')->middleware(['auth', 'throttle:6,1'])->name('send');
 });
+
+Route::prefix('/minha-conta')->name('my-account.')->controller(App\Http\Controllers\MyAccountController::class)->middleware(['auth', 'verified'])->group(function () {
+    Route::get('/', 'index')->name('index');
+});

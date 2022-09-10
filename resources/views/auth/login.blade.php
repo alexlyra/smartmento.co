@@ -18,12 +18,12 @@
                                 </div>
     
                                 <div class="row mx-0 px-0 justify-content-center">
-                                    <div class="col-md-8 mx-0 px-0 my-4">
+                                    <div class="col-md-9 mx-0 px-0 my-4">
                                         <div class="smartmentor-control">
-                                            <input class="m-0 p-0 w-100" type="email" name="email" id="email" autocomplete="off" placeholder="E-mail">
+                                            <input class="m-0 p-0 w-100" type="email" name="email" id="email" autocomplete="off" placeholder="E-mail" value="{{old('email')}}">
                                         </div>
                                     </div>
-                                    <div class="col-md-8 mx-0 px-0 my-4">
+                                    <div class="col-md-9 mx-0 px-0 my-4">
                                         <div class="smartmentor-control">
                                             <input class="m-0 p-0 w-100" type="password" name="password" id="password" autocomplete="off" placeholder="Senha">
                                         </div>

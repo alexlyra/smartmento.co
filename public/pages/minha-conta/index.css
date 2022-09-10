@@ -1,0 +1,77 @@
+body {
+    background-color: var(--smartmentor-gray) !important;
+}
+
+div.mentor-badge {
+    width: 75% !important;
+    background-color: white !important;
+    text-align: center !important;
+    border-radius: 1rem !important;
+    padding: 1rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+@media (max-width: 1400px) and (min-width: 768px) {
+    div.mentor-badge {
+        width: 100% !important;
+    }
+}
+
+div.mentor-badge div.badge-holder {
+    height: 20px;
+    background-color: var(--smartmentor-gray);
+    border-radius: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    width: 50% !important;
+}
+
+div.mentor-badge div#displayPhoto {
+    position: relative !important;
+}
+
+div.mentor-badge div#displayPhoto i:first-of-type {
+    font-size: 6em;
+}
+
+div.mentor-badge div#displayPhoto img {
+    width: 6em;
+    height: 6em;
+    border-radius: 10rem;
+}
+
+div.mentor-badge div#displayPhoto i.status-icon {
+    font-size: 2em !important;
+    position: absolute;
+    bottom: 0;
+    left: 75%;
+}
+
+div.mentor-badge div.user-informations {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+    width: 100% !important;
+}
+
+div.mentor-badge div.user-informations div#displayFullName, 
+div.mentor-badge div.user-informations div#displayEmailContainer, 
+div.mentor-badge div.user-informations div#displaySegmentsContainer, 
+div.mentor-badge div.user-informations div#displayInterestsContainer {
+    border-bottom: 3px solid var(--smartmentor-light-blue) !important;
+    width: 100% !important;
+    text-align: center;
+}
+
+div.mentor-badge div.user-informations div#displayEmailContainer {
+    height: 3em !important;
+}
+
+div.mentor-badge div.user-informations div#displaySegmentsContainer, 
+div.mentor-badge div.user-informations div#displayInterestsContainer {
+    height: auto !important;
+    padding-top: .75em;
+    padding-bottom: .75em;
+}

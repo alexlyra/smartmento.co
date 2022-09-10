@@ -3,6 +3,7 @@
     "/js/auth/mentor.js": "/js/auth/mentor.js",
     "/js/auth/login.js": "/js/auth/login.js",
     "/js/home.js": "/js/home.js",
+    "/js/minha-conta.js": "/js/minha-conta.js",
     "/css/app.css": "/css/app.css",
     "/css/mdb.min.css": "/css/mdb.min.css"
 }

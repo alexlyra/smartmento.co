@@ -77,5 +77,6 @@
 @endsection
 
 @push('scripts')
+    <script src="{{ asset('mdb/js/mdb.min.js') }}"></script>
     <script src="{{ asset('js/home.js') }}"></script>
 @endpush

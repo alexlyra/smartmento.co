@@ -63,7 +63,7 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="avatarMenu">
                                     <li>
-                                        <a class="dropdown-item" href="#" data-user="pending">Minha conta</a>
+                                        <a class="dropdown-item" href="{{ route('my-account.index') }}">Minha conta</a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="{{ route('logout') }}">Sair</a>
