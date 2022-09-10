@@ -1,6 +1,9 @@
+import * as mdb from 'mdb-ui-kit';
 import Swal from "sweetalert2";
 
 const container = document.getElementById('myAccountContainer');
+
+const statusTooltip = new mdb.Tooltip(document.querySelector('i.status-icon'));
 
 if (container && container.dataset && container.dataset.userStatus && container.dataset.userStatus === 'pending') {
     Swal.fire({

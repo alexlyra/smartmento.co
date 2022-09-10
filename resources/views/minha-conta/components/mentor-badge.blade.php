@@ -7,7 +7,7 @@
             <i class="fa-light fa-circle-user smartmentor-light-blue"></i>
         @endif
 
-        <i class="{{ auth()->user()->status_icon }} status-icon"></i>
+        <i class="{{ auth()->user()->status_icon }} status-icon" data-mdb-toggle="tooltip" title="{{ auth()->user()->status_label }}"></i>
     </div>
 
     <div class="user-informations">

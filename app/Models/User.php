@@ -111,6 +111,26 @@ class User extends Authenticatable implements MustVerifyEmail {
         return $icon;
     }
 
+    public function getStatusLabelAttribute (): string {
+        $label = 'Desconhecido';
+
+        switch ($this->status) {
+            case 'pending': $label = 'Pendente'; break;
+            case 'approved': $label = 'Aprovado'; break;
+            case 'unapproved': $label = 'Não aprovado'; break;
+            case 'authorized': $label = 'Autorizado'; break;
+            case 'unauthorized': $label = 'Não autorizado'; break;
+            case 'analyzing': $label = 'Em análise'; break;
+            case 'reviewing': $label = 'Em revisão'; break;
+            case 'reported': $label = 'Reportado'; break;
+            case 'cancelled': $label = 'Cancelado'; break;
+            case 'robot': $label = 'Robô'; break;
+            case 'deleted': $label = 'Deletado'; break;
+        }
+
+        return $label;
+    }
+
     public function roles (): HasManyThrough {
         return $this->hasManyThrough(SystemRole::class, Role::class, 'user_id', 'id', 'id', 'role_id');
     }
