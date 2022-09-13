@@ -2325,7 +2325,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-var environment = 'local';
+var environment = 'production';
 var baseURL = environment === 'local' ? "".concat(location.origin) : "".concat(location.origin, "/test");
 
 /***/ }),
