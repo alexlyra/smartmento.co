@@ -134,7 +134,7 @@ class User extends Authenticatable implements MustVerifyEmail {
         return $label;
     }
 
-    public function getPriceAttribute ():object|null {
+    public function getPriceAttribute () {
         if ($this->is_mentor === true) {
             $price = $this->customs->where('key', 'mentor:pricing')->first();
             if ($price) {
