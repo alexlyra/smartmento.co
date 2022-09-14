@@ -41,3 +41,6 @@ Route::prefix('/email')->name('verification.')->controller(App\Http\Controllers\
 Route::prefix('/minha-conta')->name('my-account.')->controller(App\Http\Controllers\MyAccountController::class)->middleware(['auth', 'verified'])->group(function () {
     Route::get('/', 'index')->name('index');
 });
+
+Route::view('/termos-de-uso', 'pages.termos-de-uso')->name('termos-de-uso');
+Route::view('/politicas-de-privacidade', 'pages.politicas-de-privacidade')->name('politicas-de-privacidade');

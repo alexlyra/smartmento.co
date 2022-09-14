@@ -8,6 +8,14 @@
         </div>
         <div class="category">
             <a href="https://wa.link/z2vnf1" class="mb-3">Quero usar o Guru</a>
+            <div class="mt-3">
+                <a href="{{ route('termos-de-uso') }}" class="d-block" style="font-size: 1em !important">
+                    Termos de Uso
+                </a>
+                <a href="{{ route('politicas-de-privacidade') }}" class="d-block" style="font-size: 1em !important">
+                    Política de Privacidade
+                </a>
+            </div>
         </div>
         <div class="category">
             <a href="https://smartmentor.com.br/test/cadastrar/mentor" class="mb-3">Quero ser Mentor</a>

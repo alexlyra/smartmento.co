@@ -55,4 +55,7 @@ export type AppInterface = {
 /* @ts-ignore */
 export const environment:String = app ? app.environment : 'local';
 
-export const baseURL:String = environment === 'local' ? `${location.origin}` : `${location.origin}/test`;
+const metaURL = document.querySelector('meta[name="url"]');
+
+/* export const baseURL:String = environment === 'local' ? `${location.origin}` : `${location.origin}/test`; */
+export const baseURL:String = metaURL ? `${metaURL.getAttribute('content')}` : (environment === 'local' ? `${location.origin}` : `${location.origin}/test`);

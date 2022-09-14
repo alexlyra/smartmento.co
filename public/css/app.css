@@ -91,6 +91,13 @@
 .form-check-input:checked {
     border-color: var(--smartmentor-light-blue) !important;
 }
+
+a.smartmentor-dark-pink:hover {
+    color: #c92549 !important;
+}
+a.smartmentor-dark-pink:active {
+    color: #c92549 !important;
+}
 * {
     font-family: 'Ubuntu', sans-serif;
     color: var(--smartmentor-dark-blue);

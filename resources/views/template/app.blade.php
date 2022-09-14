@@ -37,6 +37,7 @@
 
         <meta name="title" content="{{ Config::get('app.name') }}">
         <meta name="description" content="{{ Config::get('app.name') }}">
+        <meta name="url" content="{{ Config::get('app.url') }}">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ Config::get('app.name') }}</title>
         @stack('header')

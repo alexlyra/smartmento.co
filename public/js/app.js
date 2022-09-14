@@ -2328,7 +2328,10 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 var environment = app ? app.environment : 'local';
-var baseURL = environment === 'local' ? "".concat(location.origin) : "".concat(location.origin, "/test");
+var metaURL = document.querySelector('meta[name="url"]');
+/* export const baseURL:String = environment === 'local' ? `${location.origin}` : `${location.origin}/test`; */
+
+var baseURL = metaURL ? "".concat(metaURL.getAttribute('content')) : environment === 'local' ? "".concat(location.origin) : "".concat(location.origin, "/test");
 
 /***/ }),
 
@@ -2348,7 +2351,7 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.app = {
-  environment: "production"
+  environment: "local"
 };
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

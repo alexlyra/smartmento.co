@@ -8,6 +8,16 @@
             <h6>
                 Monte seu perfil profissional para que o guru encontre desafios na sua área de expertise
             </h6>
+
+            <div class="card shadow-none border border-3 rounded-7 border-smartmentor-dark-pink">
+                <div class="card-body p-2">
+                    <h5 class="mb-0">
+                        <strong class="me-2">Aviso:</strong> Ao se registrar em nossa plataforma você está de acordo com nossos 
+                        <a href="{{ route('termos-de-uso') }}" target="_blank" class="smartmentor-dark-pink">termos de uso</a> e 
+                        <a href="{{ route('politicas-de-privacidade') }}" target="_blank" class="smartmentor-dark-pink">políticas de privacidade</a>
+                    </h5>
+                </div>
+            </div>
         </div>
     </section>
 
