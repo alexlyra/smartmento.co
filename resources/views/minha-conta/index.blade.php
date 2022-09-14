@@ -52,7 +52,7 @@
                                     <small class="font-weight-bold">/{{ auth()->user()->price->per === 'hour' ? 'hora' : 'aula' }}</small>
                                 </div>
                                 <div class="card-body p-2 text-center">
-                                    <h6><i class="fa-solid fa-location-dot me-2"></i> {{ auth()->user()->price->{'face-to-face'} === true ? auth()->user()->price->{'face-to-face'} : 'Sem opção presencial' }}</h6>
+                                    <h6><i class="fa-solid fa-location-dot me-2"></i> {{ auth()->user()->price->{'face-to-face'} === true ? auth()->user()->address : 'Sem opção presencial' }}</h6>
                                 </div>
                             </div>
                         </div>

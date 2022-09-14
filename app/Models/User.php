@@ -148,6 +148,20 @@ class User extends Authenticatable implements MustVerifyEmail {
         return null;
     }
 
+    public function getAddressAttribute (): string {
+        if ($this->is_mentor === true) {
+            $address = $this->customs->where('key', 'mentor:address')->first();
+            if ($address) {
+                $content = $address->content;
+                if ($content) {
+                    return $content;
+                }
+            }
+        }
+
+        return 'Sem endereço';
+    }
+
     public function roles (): HasManyThrough {
         return $this->hasManyThrough(SystemRole::class, Role::class, 'user_id', 'id', 'id', 'role_id');
     }
