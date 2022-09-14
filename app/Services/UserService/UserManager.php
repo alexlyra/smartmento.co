@@ -16,6 +16,7 @@ class UserManager {
         if (filledWithContent($data, 'priceType', ['type' => 'string', 'in' => ['paid', 'free']])) {
             $type = new Custom();
             $type->user_id = $userId;
+            $type->type = 'price';
             $type->key = "mentor:pricing";
             $content = [
                 'type' => "{$data['priceType']}",

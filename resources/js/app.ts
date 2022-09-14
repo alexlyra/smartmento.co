@@ -48,6 +48,11 @@ export type SelectOptions = {
     visibleOptions?:Number,
 }
 
-export const environment:String = 'local';
+export type AppInterface = {
+    environment: 'local'|'production'
+}
+
+/* @ts-ignore */
+export const environment:String = app ? app.environment : 'local';
 
 export const baseURL:String = environment === 'local' ? `${location.origin}` : `${location.origin}/test`;

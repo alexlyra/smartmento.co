@@ -31,7 +31,7 @@ class LoginController extends Controller {
             return back()->withErrors('Não foi possível autenticar o usuário!')->withInput($request->all());
         }
 
-        return redirect()->route('index');
+        return redirect()->route('my-account.index');
     }
 
     public function logout () {

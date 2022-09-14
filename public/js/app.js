@@ -2324,8 +2324,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "environment": () => (/* binding */ environment)
 /* harmony export */ });
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+/* @ts-ignore */
 
-var environment = 'production';
+
+var environment = app ? app.environment : 'local';
 var baseURL = environment === 'local' ? "".concat(location.origin) : "".concat(location.origin, "/test");
 
 /***/ }),
@@ -2345,6 +2347,9 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.app = {
+  environment: "production"
+};
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting

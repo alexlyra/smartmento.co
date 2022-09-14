@@ -13,7 +13,7 @@ class EmailVerificationController extends Controller {
 
     public function verify (EmailVerificationRequest $request) {
         $request->fulfill();
-        return redirect()->route('index');
+        return redirect()->route('my-account.index');
     }
 
     public function send (Request $request) {

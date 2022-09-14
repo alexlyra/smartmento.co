@@ -5,12 +5,15 @@ namespace App\Models;
 use App\Models\System\Interests;
 use App\Models\System\Role as SystemRole;
 use App\Models\System\Segments;
+use App\Models\Users\CustomParameter;
 use App\Models\Users\Interest;
 use App\Models\Users\Role;
 use App\Models\Users\Segment;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -131,6 +134,20 @@ class User extends Authenticatable implements MustVerifyEmail {
         return $label;
     }
 
+    public function getPriceAttribute ():object|null {
+        if ($this->is_mentor === true) {
+            $price = $this->customs->where('key', 'mentor:pricing')->first();
+            if ($price) {
+                $content = $price->content;
+
+                if ($content) {
+                    return (object) $content;
+                }
+            }
+        }
+        return null;
+    }
+
     public function roles (): HasManyThrough {
         return $this->hasManyThrough(SystemRole::class, Role::class, 'user_id', 'id', 'id', 'role_id');
     }
@@ -141,5 +158,13 @@ class User extends Authenticatable implements MustVerifyEmail {
 
     public function interestsRelation (): HasManyThrough {
         return $this->hasManyThrough(Interests::class, Interest::class, 'user_id', 'id', 'id', 'interest_id');
+    }
+
+    public function customs (): HasMany {
+        return $this->hasMany(CustomParameter::class, 'user_id', 'id')->where('active', 1);
+    }
+
+    public function challenge (): BelongsTo {
+        return $this->belongsTo(Challenge::class, 'id', 'user_id');
     }
 }

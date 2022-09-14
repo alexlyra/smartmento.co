@@ -4,6 +4,7 @@ namespace App\Models\Users;
 
 use App\Casts\Json;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -26,6 +27,12 @@ class CustomParameter extends Model {
         'active' => 'boolean',
         'content' => Json::class,
     ];
+
+    public static function booted (): void {
+        static::addGlobalScope('NotDeleted', function (Builder $builder) {
+            $builder->whereNull("users_custom_parameters.deleted_at");
+        });
+    }
 
     public function user () {
         return $this->belongsTo(User::class, 'user_id', 'id');
