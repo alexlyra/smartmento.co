@@ -13,8 +13,10 @@
                 <div class="card-body p-2">
                     <h5 class="mb-0">
                         <strong class="me-2">Aviso:</strong> Ao se registrar em nossa plataforma você está de acordo com nossos 
-                        <a href="{{ route('termos-de-uso') }}" target="_blank" class="smartmentor-dark-pink">termos de uso</a> e 
-                        <a href="{{ route('politicas-de-privacidade') }}" target="_blank" class="smartmentor-dark-pink">políticas de privacidade</a>
+                        <!-- <a href="{{ route('termos-de-uso') }}" target="_blank" class="smartmentor-dark-pink">termos de uso</a> e 
+                        <a href="{{ route('politicas-de-privacidade') }}" target="_blank" class="smartmentor-dark-pink">políticas de privacidade</a> -->
+                        <a href="https://drive.google.com/file/d/1b4JIs3wKQ_6zHSHw1qLtKQ-o1ygctVaF/view" target="_blank" class="smartmentor-dark-pink">termos de uso</a> e 
+                        <a href="https://drive.google.com/file/d/1su95L41IrCSIMzdzqHSZb0d5aH33wajJ/view" target="_blank" class="smartmentor-dark-pink">políticas de privacidade</a>
                     </h5>
                 </div>
             </div>

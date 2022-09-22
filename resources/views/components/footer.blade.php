@@ -9,11 +9,20 @@
         <div class="category">
             <a href="https://wa.link/z2vnf1" class="mb-3">Quero usar o Guru</a>
             <div class="mt-3">
-                <a href="{{ route('termos-de-uso') }}" class="d-block" style="font-size: 1em !important">
+                <!-- <a href="{{ route('termos-de-uso') }}" class="d-block" style="font-size: 1em !important">
                     Termos de Uso
                 </a>
                 <a href="{{ route('politicas-de-privacidade') }}" class="d-block" style="font-size: 1em !important">
                     Política de Privacidade
+                </a> -->
+                <a href="https://drive.google.com/file/d/1b4JIs3wKQ_6zHSHw1qLtKQ-o1ygctVaF/view" class="d-block" style="font-size: 1em !important">
+                    Termos de Uso
+                </a>
+                <a href="https://drive.google.com/file/d/1su95L41IrCSIMzdzqHSZb0d5aH33wajJ/view" class="d-block" style="font-size: 1em !important">
+                    Política de Privacidade
+                </a>
+                <a href="https://smart.hipporello.net/desk" class="d-block" style="font-size: 1em !important">
+                    Suporte
                 </a>
             </div>
         </div>

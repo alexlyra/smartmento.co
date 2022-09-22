@@ -7,16 +7,17 @@ mentorBtn.forEach((btn) => {
     btn.addEventListener('click', event => {
         if ((btn as HTMLElement).dataset.action) {
             if ((btn as HTMLElement).dataset.action === 'login') {
-                Swal.fire({
-                    icon: 'info',
-                    iconHtml: `<i class="fa-light fa-triangle-person-digging p-2"></i>`,
-                    title: 'Em breve disponível',
-                    customClass: {
-                        confirmButton: 'bg-smartmentor-dark-blue rounded-9',
-                        icon: 'border-smartmentor-dark-blue p-2',
-                    },
-                    confirmButtonText: 'Fechar',
-                });
+                // Swal.fire({
+                //     icon: 'info',
+                //     iconHtml: `<i class="fa-light fa-triangle-person-digging p-2"></i>`,
+                //     title: 'Em breve disponível',
+                //     customClass: {
+                //         confirmButton: 'bg-smartmentor-dark-blue rounded-9',
+                //         icon: 'border-smartmentor-dark-blue p-2',
+                //     },
+                //     confirmButtonText: 'Fechar',
+                // });
+                window.location.href = `${baseURL}/login`; 
             } else if ((btn as HTMLElement).dataset.action === 'register') {
                 window.location.href = `${baseURL}/cadastrar/mentor`;
             }
