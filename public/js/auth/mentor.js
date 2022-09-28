@@ -2329,9 +2329,10 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var environment = app ? app.environment : 'local';
 var metaURL = document.querySelector('meta[name="url"]');
+var baseURL = location.origin;
 /* export const baseURL:String = environment === 'local' ? `${location.origin}` : `${location.origin}/test`; */
 
-var baseURL = metaURL ? "".concat(metaURL.getAttribute('content')) : environment === 'local' ? "".concat(location.origin) : "".concat(location.origin, "/test");
+/* export const baseURL:String = metaURL ? `${metaURL.getAttribute('content')}` : (environment === 'local' ? `${location.origin}` : `${location.origin}/test`); */
 
 /***/ }),
 
