@@ -19645,12 +19645,12 @@ mentorBtn.forEach(function (btn) {
 var ChallengeToday = document.getElementById('ChallengeToday');
 ChallengeToday === null || ChallengeToday === void 0 ? void 0 : ChallengeToday.addEventListener('click', function (event) {
   event.preventDefault();
-  window.open("https://docs.google.com/forms/d/e/1FAIpQLSdlXPlZVJ7eKNZ24OT2AONXsWw1xv2vusghSBUiEu1ybkruyQ/viewform");
+  window.location.href = "".concat(_resources_js_app__WEBPACK_IMPORTED_MODULE_0__.baseURL, "/cadastrar/mentee");
 });
 var ChallengeToday1 = document.getElementById('ChallengeToday1');
 ChallengeToday1 === null || ChallengeToday1 === void 0 ? void 0 : ChallengeToday1.addEventListener('click', function (event) {
   event.preventDefault();
-  window.open("https://docs.google.com/forms/d/e/1FAIpQLSdlXPlZVJ7eKNZ24OT2AONXsWw1xv2vusghSBUiEu1ybkruyQ/viewform");
+  window.location.href = "".concat(_resources_js_app__WEBPACK_IMPORTED_MODULE_0__.baseURL, "/cadastrar/mentee");
 });
 })();
 
