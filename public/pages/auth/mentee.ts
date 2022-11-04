@@ -297,13 +297,19 @@ const notification=document.getElementById('notification');
 
 notification?.addEventListener('click',event=>{
 
-    Swal.fire
+    Swal.fire({
+
+        iconHtml: '<i class="fa-solid fa-bell"></i>',
+        html:`<input class="smartmentor-input-pink" type="text" placeholder="Digite seu e-mail">
+        <p><p>
+        <input class="smartmentor-input-pink" type="text" placeholder="Digite o segmento que você procura">
+        `,
+        customClass:{ confirmButton: 'smartmentor-btn smartmentor-btn-dark-pink mt-md-3 mb-md-0 mb-3 ripple-surface',
+
+
+        }
+            
+    })
+   
 })
 
-Swal.fire({
-
-    icon:'info',
-    title:'teste',
-    text:'teste'
-
-})

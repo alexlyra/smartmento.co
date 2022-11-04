@@ -284,4 +284,16 @@ footer .menu div.category a i {
     cursor: pointer;
 }
 
+.smartmentor-input-pink {
+
+    color: var(--smartmentor-dark-pink) !important;
+    border-color: var(--smartmentor-dark-pink) !important;
+    border-radius: 17px !important;
+    padding: 0.75rem 1.6875rem 0.6875rem;
+
+    }
+
+
+
+
 /*# sourceMappingURL=app.css.map*/

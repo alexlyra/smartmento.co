@@ -24210,12 +24210,13 @@ window.addEventListener('load', function (event) {
 });
 var notification = document.getElementById('notification');
 notification === null || notification === void 0 ? void 0 : notification.addEventListener('click', function (event) {
-  (sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire);
-});
-sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
-  icon: 'info',
-  title: 'teste',
-  text: 'teste'
+  sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
+    iconHtml: '<i class="fa-solid fa-bell"></i>',
+    html: "<input class=\"smartmentor-input-pink\" type=\"text\" placeholder=\"Digite seu e-mail\">\n        <p><p>\n        <input class=\"smartmentor-input-pink\" type=\"text\" placeholder=\"Digite o segmento que voc\xEA procura\">\n        ",
+    customClass: {
+      confirmButton: 'smartmentor-btn smartmentor-btn-dark-pink mt-md-3 mb-md-0 mb-3 ripple-surface'
+    }
+  });
 });
 })();
 

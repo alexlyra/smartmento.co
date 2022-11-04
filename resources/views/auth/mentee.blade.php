@@ -55,6 +55,11 @@
                         </button>
                  </div>
 
+                 <div>
+                        <button class="smartmentor-btn smartmentor-btn-dark-pink mt-md-3 mb-md-0 mb-3 ripple-surface" id="notification">
+                            Me notifique
+                        </button>
+
                  </div>
             </div>
         </div>
