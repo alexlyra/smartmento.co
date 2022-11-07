@@ -299,15 +299,23 @@ notification?.addEventListener('click',event=>{
 
     Swal.fire({
 
-        iconHtml: '<i class="fa-solid fa-bell"></i>',
-        html:`<input class="smartmentor-input-pink" type="text" placeholder="Digite seu e-mail">
+        imageUrl: `${location.origin}/storage/images/guru.png`,
+        imageWidth: 100,
+        imageHeight: 100,
+        title: '<strong><h5 class="smartmentor-light-blue">  Nos envie uma mensagem e entraremos em contato quando tivemos o segmento</h5></strong>',
+        /*iconHtml: '<i class="fa-solid fa-bell"></i>',*/
+        html:`
+        <input class="smartmentor-input-pink" type="text" placeholder="Digite seu e-mail">
         <p><p>
         <input class="smartmentor-input-pink" type="text" placeholder="Digite o segmento que você procura">
         `,
-        customClass:{ confirmButton: 'smartmentor-btn smartmentor-btn-dark-pink mt-md-3 mb-md-0 mb-3 ripple-surface',
+        customClass:{ confirmButton: 'smartmentor-btn smartmentor-btn-dark-pink mt-md-3 mb-md-0 mb-3 ripple-surface'} ,
+     
+        confirmButtonText: 
+        'Enviar mensagem'
 
 
-        }
+        
             
     })
    

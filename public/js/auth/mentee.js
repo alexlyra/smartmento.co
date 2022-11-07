@@ -24211,11 +24211,17 @@ window.addEventListener('load', function (event) {
 var notification = document.getElementById('notification');
 notification === null || notification === void 0 ? void 0 : notification.addEventListener('click', function (event) {
   sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
-    iconHtml: '<i class="fa-solid fa-bell"></i>',
-    html: "<input class=\"smartmentor-input-pink\" type=\"text\" placeholder=\"Digite seu e-mail\">\n        <p><p>\n        <input class=\"smartmentor-input-pink\" type=\"text\" placeholder=\"Digite o segmento que voc\xEA procura\">\n        ",
+    imageUrl: "".concat(location.origin, "/storage/images/guru.png"),
+    imageWidth: 100,
+    imageHeight: 100,
+    title: '<strong><h5 class="smartmentor-light-blue">  Nos envie uma mensagem e entraremos em contato quando tivemos o segmento</h5></strong>',
+
+    /*iconHtml: '<i class="fa-solid fa-bell"></i>',*/
+    html: "\n        <input class=\"smartmentor-input-pink\" type=\"text\" placeholder=\"Digite seu e-mail\">\n        <p><p>\n        <input class=\"smartmentor-input-pink\" type=\"text\" placeholder=\"Digite o segmento que voc\xEA procura\">\n        ",
     customClass: {
       confirmButton: 'smartmentor-btn smartmentor-btn-dark-pink mt-md-3 mb-md-0 mb-3 ripple-surface'
-    }
+    },
+    confirmButtonText: 'Enviar mensagem'
   });
 });
 })();
