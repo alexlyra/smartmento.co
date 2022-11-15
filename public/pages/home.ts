@@ -29,6 +29,7 @@ const ChallengeToday = document.getElementById('ChallengeToday');
 ChallengeToday?.addEventListener('click', (event:Event) => {
     event.preventDefault();
 
+    
     window.open ("https://docs.google.com/forms/d/e/1FAIpQLSdlXPlZVJ7eKNZ24OT2AONXsWw1xv2vusghSBUiEu1ybkruyQ/viewform");
 });
 
