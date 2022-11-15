@@ -75,9 +75,13 @@ class RegisterController extends Controller {
 
     public function mentee () {
 
+        $segments = Segments::where('active', 1)->pluck('name', 'slug');
+        return view('auth.mentee', compact('segments'));
+
     }
 
-    public function menteeRegister (Request $request) {
+    /*public function menteeRegister (Request $request) {
 
-    }
+
+    }*/
 }
