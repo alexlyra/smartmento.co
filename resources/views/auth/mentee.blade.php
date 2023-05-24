@@ -55,6 +55,18 @@
                         </button>
                  </div>
 
+                <div class="bg-white rounded-5 p-2 d-flex flex-row align-items-center justify-content-between mt-3">
+                    
+                    <h6 class="mb-0" style="line-height: normal"><b>
+                    Não encontrou o segmento que procurava? Nos envie uma mensagem<p> e entraremos em contato quando tivermos o segmento.  
+                    </b></h6>
+                     <div>
+                    <button class="smartmentor-btn smartmentor-btn-dark-pink mb-0 ms-3 ripple-surface" id="notification">
+                        Me notifique
+                    </button>   
+                    <i class="fa-2x smartmentor-dark-pink fa-solid fa-bell" ></i>
+                    </div>
+
                  </div>
             </div>
         </div>
