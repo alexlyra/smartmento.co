@@ -8,7 +8,7 @@
     <section id="topimage" class="position-relative">
         <img src="{{ asset('storage/images/home_1.png') }}" class="img-fluid home-img-1" alt="">
         <h4 class="tdh-1">Para todo desafio existe uma resposta</h4>
-        <h5 class="tdh-2">Nós pesquisamos, procuramos e conectamos os seus desafios á mentores que irão te guiar nessa jornada</h5>
+        <h5 class="tdh-2">Nós pesquisamos, procuramos e conectamos os seus desafios a mentores que irão te guiar nessa jornada</h5>
         <h5 class="tdh-2_2">Aproveite a etapa da fase beta, compartilhe e deixe seu feedback</h5>
         <!-- <h5 class="tdh-2">Aproveite etapa da fase beta, compartilhe e deixe seu feedback</h5> -->
         <h1 class="tdh-3" id="ChallengeToday">

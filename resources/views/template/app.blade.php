@@ -11,28 +11,25 @@
         <meta name="msapplication-TileImage" content="{{ asset('storage/images/icon.png') }}" />
        
         @if (Config::get('app.env') === 'production')
-            <!-- Google tag (gtag.js) -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-6R8JZ4DRYT"></script>
-            <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+           <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TJQNLWK');</script>
+        <!-- End Google Tag Manager -->
 
-            gtag('config', 'G-6R8JZ4DRYT');
-            </script>
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0C32MSVK6Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-            <!-- Google Tag Manager -->
-            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-WZM7MRW');</script>
-            <!-- End Google Tag Manager -->
+  gtag('config', 'G-0C32MSVK6Q');
+</script>
 
-            <!-- Google Tag Manager (noscript) -->
-            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZM7MRW"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-            <!-- End Google Tag Manager (noscript) -->
+      
         @endif
 
         <meta name="title" content="{{ Config::get('app.name') }}">
@@ -47,6 +44,12 @@
         @stack('styles')
     </head>
     <body>
+    @if (Config::get('app.env') === 'production')
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJQNLWK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    @endif
         <x-menu />
         @stack('body')
         @yield('content')
